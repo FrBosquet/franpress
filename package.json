@@ -1,0 +1,15 @@
+{
+  "name": "franpress",
+  "version": "1.0.0",
+  "description": "A simple cms for regular people",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "blog",
+    "cms"
+  ],
+  "author": "Fran Bosquet",
+  "license": "MIT"
+}

@@ -4,7 +4,10 @@ import ContentHeading from '../../molecules/content-heading'
 
 const Content = () => (
 	<div>
-		<ContentHeading />
+		<ContentHeading
+			title="This the post title"
+			subtitle="this is the post subtitle"
+		/>
 	</div>
 )
 

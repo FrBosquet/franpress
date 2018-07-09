@@ -1,9 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-ReactDOM.render(
-  <div>
-    Bienvenido a mi nuevo blog!
-  </div>,
-  document.getElementById('App')
-)
+import Blog from './ui/templates/blog'
+
+ReactDOM.render(<Blog />, document.getElementById('App'))

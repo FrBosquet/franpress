@@ -1,5 +1,11 @@
 import React from 'react'
 
-const Content = () => <div>This is the web content</div>
+import ContentHeading from '../../molecules/content-heading'
+
+const Content = () => (
+	<div>
+		<ContentHeading />
+	</div>
+)
 
 export default Content

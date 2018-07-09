@@ -7,6 +7,7 @@ const ContentHeadingLayout = styled.div`
 	background-size: cover;
 	background-position-y: center;
 	justify-content: center;
+	align-items: flex-end;
 	padding-top: 70px;
 `
 

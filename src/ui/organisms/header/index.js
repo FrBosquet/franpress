@@ -11,6 +11,7 @@ const HeaderLayout = styled.div`
   flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+  background: linear-gradient(to bottom, rgba(235,235,235,0.2) 0%, rgba(0,0,0,0) 100%);
 `
 const Header = () => (
 	<HeaderLayout>

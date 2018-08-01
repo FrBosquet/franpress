@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import HeaderLogo from '../../molecules/header-logo'
+
 const HeaderLayout = styled.div`
   position: fixed;
   top: 0;
@@ -15,7 +17,7 @@ const HeaderLayout = styled.div`
 `
 const Header = () => (
 	<HeaderLayout>
-		<h1>title</h1>
+		<HeaderLogo />
 		<h1>subtitle</h1>
 	</HeaderLayout>
 )

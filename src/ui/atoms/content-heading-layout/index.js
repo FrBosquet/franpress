@@ -6,6 +6,7 @@ const ContentHeadingLayout = styled.div`
 	background: url('./assets/images/head.jpg');
 	background-size: cover;
 	background-position-y: center;
+	box-sizing: border-box;
 	justify-content: center;
 	align-items: flex-end;
 	padding-top: 70px;

@@ -13,6 +13,7 @@ const ContentHeadingWrapper = styled.div`
 	);
 	padding: 20px;
 	box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.65);
+	box-sizing: border-box;
 	border-left: 2px solid rgba(146, 26, 56, 0.2);
 	border-right: 2px solid rgba(146, 26, 56, 0.2);
 `

@@ -1,11 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-import ContentHeadingLayout from '../../atoms/content-heading-layout'
 import ContentHeadingWrapper from '../../atoms/content-heading-wrapper'
 import ContentHeadingTitle from '../../atoms/content-heading-title'
 import ContentHeadingSubtitle from '../../atoms/content-heading-subtitle'
 import Icon from '../../atoms/icon'
+
+const ContentHeadingLayout = styled.div`
+	display: flex;
+	height: 560px;
+	background: url('./assets/images/head.jpg');
+	background-size: cover;
+	background-position-y: center;
+	box-sizing: border-box;
+	justify-content: center;
+	align-items: flex-end;
+	padding-top: 70px;
+`
 
 const ContentHeading = ({ icon, title, subtitle }) => (
 	<ContentHeadingLayout>

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import HeaderLogo from '../../molecules/header-logo'
+import { HeaderLogo } from '../molecules'
 
 const HeaderLayout = styled.div`
   position: fixed;

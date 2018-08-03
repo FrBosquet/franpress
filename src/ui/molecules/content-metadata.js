@@ -1,9 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { sideBars } from '../../atoms/mixins'
-import ContentMetadataLabel from '../../atoms/content-metadata-label'
-import ContentMetadataTag from '../../atoms/content-metadata-tag'
+import { sideBars } from '../atoms/mixins'
+import {
+  ContentMetadataLabel,
+  ContentMetadataTag
+} from '../atoms'
 
 const ContentMetadataLayout = styled.div`
   display: grid;

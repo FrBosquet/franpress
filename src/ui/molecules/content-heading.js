@@ -2,10 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import ContentHeadingWrapper from '../../atoms/content-heading-wrapper'
-import ContentHeadingTitle from '../../atoms/content-heading-title'
-import ContentHeadingSubtitle from '../../atoms/content-heading-subtitle'
-import Icon from '../../atoms/icon'
+import {
+	ContentHeadingWrapper, 
+	ContentHeadingTitle, 
+	ContentHeadingSubtitle, 
+	Icon
+} from '../atoms'
 
 const ContentHeadingLayout = styled.div`
 	display: flex;

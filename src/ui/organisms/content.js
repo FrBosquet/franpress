@@ -1,7 +1,6 @@
 import React from 'react'
 
-import ContentHeading from '../../molecules/content-heading'
-import ContentMetadata from '../../molecules/content-metadata/'
+import { ContentHeading, ContentMetadata } from '../molecules'
 
 const Content = () => (
 	<div>

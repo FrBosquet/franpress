@@ -1,7 +1,6 @@
 import React from 'react'
 
-import Content from '../../organisms/content'
-import Header from '../../organisms/header/'
+import { Content, Header } from '../organisms'
 
 const Blog = () => (
 	<div>

@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import Icon from '../../atoms/icon'
-import HeaderLogoTitle from '../../atoms/header-logo-title'
+import { Icon, HeaderLogoTitle } from '../atoms'
 
 const HeaderLogoWrapper = styled.div`
 	display: flex;

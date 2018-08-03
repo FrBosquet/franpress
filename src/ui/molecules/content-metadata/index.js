@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { sideBars } from '../../atoms/mixins'
-import ContentMetadataLabel from '../../atoms/content-metadata-label';
+import ContentMetadataLabel from '../../atoms/content-metadata-label'
+import ContentMetadataTag from '../../atoms/content-metadata-tag'
 
 const ContentMetadataLayout = styled.div`
   display: grid;
@@ -14,20 +15,22 @@ const ContentMetadataLayout = styled.div`
   ${ sideBars }
 `
 
-const ContentMetadata = ({ aProp }) => (
+const ContentMetadata = ({ tags }) => (
   <ContentMetadataLayout>
     <ContentMetadataLabel>18 de Julio de 2018</ContentMetadataLabel>
     <ContentMetadataLabel align='center'>Foto por Aaron Burden/Unsplash</ContentMetadataLabel>
-    <ContentMetadataLabel>{ aProp }</ContentMetadataLabel>
+    <ContentMetadataLabel align='flex-end'>
+      { tags.map(tag => <ContentMetadataTag key={tag}>{tag}</ContentMetadataTag> ) }
+    </ContentMetadataLabel>
   </ContentMetadataLayout>
 )
 
 ContentMetadata.propTypes = {
-  aProp: PropTypes.string,
+  tags: PropTypes.array,
 }
 
 ContentMetadata.defaultProps = {
-  aProp: 'value'
+  tags: ['blog', 'react']
 }
 
 export default ContentMetadata

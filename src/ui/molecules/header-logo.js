@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { Icon, HeaderLogoTitle } from '../atoms'
@@ -16,8 +15,8 @@ const HeaderLogoWrapper = styled.div`
 const HeaderLogo = () => (
 	<HeaderLogoWrapper>
 		<Icon src='assets/images/blog-logo-white.svg' width={60} margin={0}/>
-    <HeaderLogoTitle space={15}>Fran</HeaderLogoTitle>
-    <HeaderLogoTitle space={10} color='#EBEBEB'>Bosquet</HeaderLogoTitle>
+		<HeaderLogoTitle space={15}>Fran</HeaderLogoTitle>
+		<HeaderLogoTitle space={10} color='#EBEBEB'>Bosquet</HeaderLogoTitle>
 	</HeaderLogoWrapper>
 )
 

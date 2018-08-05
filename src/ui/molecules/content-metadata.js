@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { sideBars } from '../atoms/mixins'
+import { sideBars, centerBlock } from '../mixins'
 import {
 	ContentMetadataLabel,
 	ContentMetadataTag
@@ -10,10 +10,8 @@ import {
 const ContentMetadataLayout = styled.div`
   display: grid;
   grid-template-columns: 33% auto 33%;
-  box-sizing: border-box;
   height: 45px;
-	width: 960px;
-  margin: auto;
+  ${ centerBlock }
   ${ sideBars }
 `
 

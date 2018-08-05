@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { sideBars } from './mixins'
+import { sideBars } from '../mixins'
 
 const ContentHeadingWrapper = styled.div`
 	display: flex;

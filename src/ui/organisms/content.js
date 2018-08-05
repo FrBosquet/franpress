@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContentBodyParagraph } from '../atoms'
+import { ContentBodyParagraph, ContentBodyTitle } from '../atoms'
 import { ContentHeading, ContentMetadata, ContentBody } from '../molecules'
 
 const Content = () => (
@@ -13,15 +13,14 @@ const Content = () => (
 			<ContentBodyParagraph>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet velit consectetur, ultricies nisi in, tempus neque. Praesent neque ex, maximus euismod dictum non, dapibus a purus. Quisque rhoncus lectus at enim aliquet feugiat eu tristique lorem. Curabitur ut finibus eros, sit amet mollis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, felis eu finibus lacinia, eros magna aliquam diam, quis tincidunt felis dolor vel ligula. Mauris tincidunt mollis arcu id auctor. Sed faucibus ut est id ultricies. Maecenas suscipit nisl in leo ultricies, sed sollicitudin libero feugiat. Aliquam pretium mi in nibh congue rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam scelerisque tincidunt nisl at vestibulum.
 			</ContentBodyParagraph>
-			<h2>Subtitle 1</h2>
+			<ContentBodyTitle>Subtitle 1</ContentBodyTitle>
 			<ContentBodyParagraph>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet velit consectetur, ultricies nisi in, tempus neque. Praesent neque ex, maximus euismod dictum non, dapibus a purus. Quisque rhoncus lectus at enim aliquet feugiat eu tristique lorem. Curabitur ut finibus eros, sit amet mollis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, felis eu finibus lacinia, eros magna aliquam diam, quis tincidunt felis dolor vel ligula. Mauris tincidunt mollis arcu id auctor. Sed faucibus ut est id ultricies. Maecenas suscipit nisl in leo ultricies, sed sollicitudin libero feugiat. Aliquam pretium mi in nibh congue rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam scelerisque tincidunt nisl at vestibulum.
 			</ContentBodyParagraph>
 			<ContentBodyParagraph>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet velit consectetur, ultricies nisi in, tempus neque. Praesent neque ex, maximus euismod dictum non, dapibus a purus. Quisque rhoncus lectus at enim aliquet feugiat eu tristique lorem. Curabitur ut finibus eros, sit amet mollis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, felis eu finibus lacinia, eros magna aliquam diam, quis tincidunt felis dolor vel ligula. Mauris tincidunt mollis arcu id auctor. Sed faucibus ut est id ultricies. Maecenas suscipit nisl in leo ultricies, sed sollicitudin libero feugiat. Aliquam pretium mi in nibh congue rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam scelerisque tincidunt nisl at vestibulum.
 			</ContentBodyParagraph>
-			<h2>Subtitle 2</h2>
-
+			<ContentBodyTitle>Subtitle 2</ContentBodyTitle>
 			<ContentBodyParagraph>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet velit consectetur, ultricies nisi in, tempus neque. Praesent neque ex, maximus euismod dictum non, dapibus a purus. Quisque rhoncus lectus at enim aliquet feugiat eu tristique lorem. Curabitur ut finibus eros, sit amet mollis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, felis eu finibus lacinia, eros magna aliquam diam, quis tincidunt felis dolor vel ligula. Mauris tincidunt mollis arcu id auctor. Sed faucibus ut est id ultricies. Maecenas suscipit nisl in leo ultricies, sed sollicitudin libero feugiat. Aliquam pretium mi in nibh congue rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam scelerisque tincidunt nisl at vestibulum.
 			</ContentBodyParagraph>

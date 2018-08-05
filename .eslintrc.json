@@ -21,7 +21,6 @@
         "semi": ["error","never"],
         "object-curly-spacing": ["error", "always"],
         "array-bracket-spacing": ["error", "always"],
-        "no-trailing-spaces": ["error", "always"],
         "react/jsx-uses-react": 2,
         "react/jsx-uses-vars": 2
     }

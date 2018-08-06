@@ -21,10 +21,10 @@ const ContentHeadingLayout = styled.div`
 	padding-top: 70px;
 `
 
-const ContentHeading = ({ icon, title, subtitle }) => (
+const ContentHeading = ({ title, subtitle }) => (
 	<ContentHeadingLayout>
 		<ContentHeadingWrapper>
-			<Icon src={icon} />
+			<Icon type='blog' />
 			<ContentHeadingTitle>{title}</ContentHeadingTitle>
 			<ContentHeadingSubtitle>{subtitle}</ContentHeadingSubtitle>
 		</ContentHeadingWrapper>
@@ -32,13 +32,8 @@ const ContentHeading = ({ icon, title, subtitle }) => (
 )
 
 ContentHeading.propTypes = {
-	icon: PropTypes.string,
 	title: PropTypes.string.isRequired,
 	subtitle: PropTypes.string.isRequired
-}
-
-ContentHeading.defaultProps = {
-	icon: 'assets/images/blog-icon.svg'
 }
 
 export default ContentHeading

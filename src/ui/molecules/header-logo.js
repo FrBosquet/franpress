@@ -14,7 +14,7 @@ const HeaderLogoWrapper = styled.div`
 
 const HeaderLogo = () => (
 	<HeaderLogoWrapper>
-		<Icon src='assets/images/blog-logo-white.svg' width={60} margin={0}/>
+		<Icon type='logo' width={60} margin={0} color='#EBEBEB'/>
 		<HeaderLogoTitle space={15}>Fran</HeaderLogoTitle>
 		<HeaderLogoTitle space={10} color='#EBEBEB'>Bosquet</HeaderLogoTitle>
 	</HeaderLogoWrapper>

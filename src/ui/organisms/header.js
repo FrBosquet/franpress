@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { HeaderLogo } from '../molecules'
+import { HeaderLogo, HeaderNav } from '../molecules'
 
 const HeaderLayout = styled.div`
   position: fixed;
@@ -12,13 +12,13 @@ const HeaderLayout = styled.div`
 	height: 80px;
   flex-direction: row;
 	justify-content: space-between;
-	align-items: center;
+	align-items: initial;
   background: linear-gradient(to bottom, rgba(235,235,235,0.2) 0%, rgba(0,0,0,0) 100%);
 `
 const Header = () => (
 	<HeaderLayout>
 		<HeaderLogo />
-		<h1>subtitle</h1>
+		<HeaderNav />
 	</HeaderLayout>
 )
 

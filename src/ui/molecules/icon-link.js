@@ -7,14 +7,21 @@ const Anchor = styled.a`
   cursor: pointer;
 `
 
-const IconLink = ({ type, url }) => 
+const IconLink = ({ type, url, width, margin }) => 
 	<Anchor href={url} target='_blank'>
-		<Icon type={ type } width='30' margin='0' />
+		<Icon type={ type } width={width} margin={margin} />
 	</Anchor>
 
 IconLink.propTypes = {
 	type: PropTypes.string,
-	url: PropTypes.string
+	url: PropTypes.string,
+	width: PropTypes.number,
+	margin: PropTypes.number
+}
+
+IconLink.defaultProps = {
+	width: 30,
+	margin: 0
 }
 
 export default IconLink

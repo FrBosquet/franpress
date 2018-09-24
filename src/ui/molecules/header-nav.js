@@ -14,6 +14,8 @@ const HeaderNavWrapper = styled.div`
 
 const HeaderNav = () => (
 	<HeaderNavWrapper>
+        <IconLink type='github' url='http://github.com' margin={20}/>
+        <IconLink type='linkedin' url='http://linkedin.com' margin={20}/>
         <IconLink type='twitter' url='http://twitter.com'/>
 	</HeaderNavWrapper>
 )

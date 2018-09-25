@@ -5,7 +5,7 @@ import Icons from './icons'
 const Icon = ({ width, margin, color, svg, type }) => {
 	const DesiredIcon = Icons[type] || Icons['logo']
 	return (
-		<svg style={{ isolation: 'isolate', marginRight: margin }} viewBox="0 0 100 100" width={ width } height={ width }>
+		<svg style={{ isolation: 'isolate', margin }} viewBox="0 0 100 100" width={ width } height={ width }>
 			<DesiredIcon color={ color }/>
 		</svg>
 	)

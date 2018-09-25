@@ -1,12 +1,13 @@
 import React from 'react'
 
-import { Content, Header, Navigation } from '../organisms'
+import { Content, Header, Navigation, Interaction } from '../organisms'
 
 const Blog = () => (
 	<div>
 		<Header />
 		<Content />
 		<Navigation />
+		<Interaction />
 	</div>
 )
 

@@ -11,9 +11,9 @@ const Anchor = styled.a`
 	margin-right: ${props => props.gap};
 `
 
-const InteractionOption = ({ type, label }) => 
+const InteractionOption = ({ type, label, flip }) => 
 	<Anchor target='_blank' >
-		<Icon type={ type } width={32} margin={5} />
+		<Icon type={ type } width={32} margin={5} flip={flip}/>
 		<InteractionOptionLabel gap={10}>{label}</InteractionOptionLabel>
 	</Anchor>
 
@@ -22,7 +22,8 @@ InteractionOption.propTypes = {
 	url: PropTypes.string,
 	width: PropTypes.number,
 	margin: PropTypes.number,
-	gap: PropTypes.number
+	gap: PropTypes.number,
+	flip: PropTypes.bool
 }
 
 InteractionOption.defaultProps = {

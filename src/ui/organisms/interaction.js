@@ -24,9 +24,9 @@ const Navigation = () =>
 	<Layout>
 		<InteractionOption label='compartir' type='twitter' />
 		<InteractionOption label='compartir' type='facebook' />
-		<InteractionOption label='comentarios' type='bullets' />
-		<InteractionOption label='entrada anterior' type='bullets' />
-		<InteractionOption label='siguiente entrada' type='bullets' />
+		<InteractionOption label='comentarios' type='buble' />
+		<InteractionOption label='entrada anterior' type='arrow' />
+		<InteractionOption label='siguiente entrada' type='arrow' flip/>
 		<InteractionOption label='lista de entradas' type='bullets' />
 	</Layout>
 

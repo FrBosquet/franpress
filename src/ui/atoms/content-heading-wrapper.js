@@ -7,11 +7,7 @@ const ContentHeadingWrapper = styled.div`
 	align-items: center;
 	width: 960px;
 	height: 490px;
-	background: linear-gradient(
-		to bottom,
-		rgba(235, 235, 235, 0.3) 10%,
-		rgba(235, 235, 235, 1) 100%
-	);
+	background-image: url('/assets/images/headingnoise.png');
 	padding: 20px;
 	box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.65);
 	box-sizing: border-box;

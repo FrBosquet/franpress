@@ -9,7 +9,7 @@ const ContentHeadingWrapper = styled.div`
 	height: 490px;
 	background-image: url('/assets/images/headingnoise.png');
 	padding: 20px;
-	box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.65);
+	box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.15);
 	box-sizing: border-box;
 	${ sideBars }
 `

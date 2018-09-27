@@ -14,7 +14,7 @@ const Shadow = styled.div`
   width: calc(( 100% - 960px ) / 2);
   height: 5px;
   background: none;
-  box-shadow: 0 -5px 5px rgba(0,0,0,0.65);
+  box-shadow: 0 -5px 5px rgba(0,0,0,0.15);
 `
 
 export const Shadows = () =>

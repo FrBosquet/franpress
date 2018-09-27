@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Content, Header, Navigation, Interaction } from '../organisms'
+import { Copy } from '../organisms/copy'
 
 const Blog = () => (
 	<div>
@@ -8,6 +9,7 @@ const Blog = () => (
 		<Content />
 		<Navigation />
 		<Interaction />
+		<Copy />
 	</div>
 )
 

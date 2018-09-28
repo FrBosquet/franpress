@@ -23,7 +23,8 @@ InteractionOption.propTypes = {
 	width: PropTypes.number,
 	margin: PropTypes.number,
 	gap: PropTypes.number,
-	flip: PropTypes.bool
+	flip: PropTypes.bool,
+	label: PropTypes.string
 }
 
 InteractionOption.defaultProps = {

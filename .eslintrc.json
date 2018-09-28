@@ -3,10 +3,13 @@
         "browser": true,
         "es6": true
     },
-    "extends": "eslint:recommended",
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
     "parserOptions": {
+        "ecmaVersion": 2018,
         "ecmaFeatures": {
-            "experimentalObjectRestSpread": true,
             "jsx": true
         },
         "sourceType": "module"
@@ -20,8 +23,6 @@
         "quotes": ["error","single"],
         "semi": ["error","never"],
         "object-curly-spacing": ["error", "always"],
-        "array-bracket-spacing": ["error", "always"],
-        "react/jsx-uses-react": 2,
-        "react/jsx-uses-vars": 2
+        "array-bracket-spacing": ["error", "always"]
     }
 }

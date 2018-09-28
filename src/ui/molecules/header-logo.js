@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { Icon, HeaderLogoTitle } from '../atoms'
@@ -19,5 +20,9 @@ const HeaderLogo = ({ dark }) => (
 		<HeaderLogoTitle space={10} color={dark ? '#292929' : '#EBEBEB'}>Bosquet</HeaderLogoTitle>
 	</HeaderLogoWrapper>
 )
+
+HeaderLogo.propTypes = {
+	dark: PropTypes.bool
+}
 
 export default HeaderLogo

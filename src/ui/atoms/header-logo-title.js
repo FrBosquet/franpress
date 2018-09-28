@@ -11,13 +11,13 @@ const HeaderLogoTitle = styled.h1`
 `
 
 HeaderLogoTitle.propTypes = {
-  color: PropTypes.string,
-  space: PropTypes.number
+	color: PropTypes.string,
+	space: PropTypes.number
 }
 
 HeaderLogoTitle.defaultProps = {
-  color: '#931A38',
-  space: 0
+	color: '#931A38',
+	space: 0
 }
 
 export default HeaderLogoTitle

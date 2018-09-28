@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Icons from './icons'
 
-const Icon = ({ width, margin, color, svg, type, flip }) => {
+const Icon = ({ width, margin, color, type, flip }) => {
 	const DesiredIcon = Icons[type] || Icons['logo']
 	return (
 		<svg style={{ isolation: 'isolate', margin, transform: flip ? 'rotate(180deg)' : '' }} viewBox="0 0 100 100" width={ width } height={ width }>

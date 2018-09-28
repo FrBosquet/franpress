@@ -8,9 +8,9 @@ const Anchor = styled.a`
 	margin-right: ${props => props.gap};
 `
 
-const IconLink = ({ type, url, width, margin, gap }) => 
+const IconLink = ({ type, url, width, margin, gap, color }) => 
 	<Anchor href={url} target='_blank' gap={gap}>
-		<Icon type={ type } width={width} margin={margin} />
+		<Icon type={ type } width={width} margin={margin} color={color} />
 	</Anchor>
 
 IconLink.propTypes = {
@@ -18,7 +18,8 @@ IconLink.propTypes = {
 	url: PropTypes.string,
 	width: PropTypes.number,
 	margin: PropTypes.number,
-	gap: PropTypes.number
+	gap: PropTypes.number,
+	color: PropTypes.string
 }
 
 IconLink.defaultProps = {

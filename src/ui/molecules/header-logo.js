@@ -12,11 +12,11 @@ const HeaderLogoWrapper = styled.div`
   margin: 10px;
 `
 
-const HeaderLogo = () => (
+const HeaderLogo = ({ dark }) => (
 	<HeaderLogoWrapper>
-		<Icon type='logo' width={60} margin={0} color='#EBEBEB'/>
-		<HeaderLogoTitle space={15}>Fran</HeaderLogoTitle>
-		<HeaderLogoTitle space={10} color='#EBEBEB'>Bosquet</HeaderLogoTitle>
+		<Icon type='logo' width={60} margin={0} color={dark ? '#292929' : '#EBEBEB'}/>
+		<HeaderLogoTitle space={15} color={dark ? '#292929' : '#931A38'}>Fran</HeaderLogoTitle>
+		<HeaderLogoTitle space={10} color={dark ? '#292929' : '#EBEBEB'}>Bosquet</HeaderLogoTitle>
 	</HeaderLogoWrapper>
 )
 

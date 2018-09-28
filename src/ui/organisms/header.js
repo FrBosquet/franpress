@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { HeaderLogo, HeaderNav } from '../molecules'
@@ -17,9 +18,13 @@ const HeaderLayout = styled.div`
 `
 const Header = () => (
 	<HeaderLayout>
-		<HeaderLogo />
-		<HeaderNav />
+		<HeaderLogo dark />
+		<HeaderNav dark />
 	</HeaderLayout>
 )
+
+HeaderLayout.propTypes = {
+	dark: PropTypes.bool
+}
 
 export default Header

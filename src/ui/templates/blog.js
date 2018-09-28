@@ -6,7 +6,7 @@ import { Shadows } from '../organisms/shadows'
 
 const Blog = () => (
 	<div>
-		<Header />
+		<Header dark />
 		<Shadows />
 		<Content />
 		<Navigation />

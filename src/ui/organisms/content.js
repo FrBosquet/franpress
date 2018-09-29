@@ -1,12 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import { ContentBodyParagraph, ContentBodyTitle } from '../atoms'
 import { ContentHeading, ContentMetadata, ContentBody } from '../molecules'
 
-const Content = () => (
+const Content = ({ title, subtitle }) => (
 	<div>
 		<ContentHeading
-			title="Crea una React App sin Create&#8209;React&#8209;App"
-			subtitle="Subtitulo de la entrada relativamente aun mas largo para que salte a la siguiente línea"
+			title={ title }
+			subtitle={ subtitle }
 		/>
 		<ContentMetadata />
 		<ContentBody>
@@ -30,5 +32,10 @@ const Content = () => (
 		</ContentBody>
 	</div>
 )
+
+Content.propTypes = {
+	title: PropTypes.string,
+	subtitle: PropTypes.string
+}
 
 export default Content

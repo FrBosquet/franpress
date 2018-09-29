@@ -8,7 +8,6 @@ const ContentHeadingTitle = styled.h1`
 		font-family: 'Oswald', sans-serif;
 		text-shadow: 2px 1px 2px #464646;
 		margin: 30px 0;
-		min-height: 215px;
 `
 
 export default ContentHeadingTitle

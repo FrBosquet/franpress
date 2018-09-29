@@ -15,10 +15,10 @@ const ContentMetadataLayout = styled.div`
   ${ sideBars }
 `
 
-const ContentMetadata = ({ tags }) => (
+const ContentMetadata = ({ tags, date, photoAuthor }) => (
 	<ContentMetadataLayout>
-		<ContentMetadataLabel>18 de Julio de 2018</ContentMetadataLabel>
-		<ContentMetadataLabel align='center'>Foto por Aaron Burden/Unsplash</ContentMetadataLabel>
+		<ContentMetadataLabel>{ date }</ContentMetadataLabel>
+		<ContentMetadataLabel align='center'>Foto por {photoAuthor}</ContentMetadataLabel>
 		<ContentMetadataLabel align='flex-end'>
 			{ tags.map(tag => <ContentMetadataTag key={tag}>{tag}</ContentMetadataTag> ) }
 		</ContentMetadataLabel>
@@ -26,11 +26,13 @@ const ContentMetadata = ({ tags }) => (
 )
 
 ContentMetadata.propTypes = {
-	tags: PropTypes.array,
+	date: PropTypes.string,
+	photoAuthor: PropTypes.string,
+	tags: PropTypes.arrayOf(PropTypes.string)
 }
 
 ContentMetadata.defaultProps = {
-	tags: [ 'blog', 'react' ]
+	tags: [ ]
 }
 
 export default ContentMetadata

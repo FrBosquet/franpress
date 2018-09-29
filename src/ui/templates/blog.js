@@ -5,13 +5,16 @@ import { Content, Header, Navigation, Interaction } from '../organisms'
 import { Copy } from '../organisms/copy'
 import { Shadows } from '../organisms/shadows'
 
-const Blog = ({ title, subtitle }) => (
+const Blog = ({ title, subtitle, date, photoAuthor, tags }) => (
 	<div>
 		<Header dark />
 		<Shadows />
 		<Content 
 			title={title}
 			subtitle={subtitle}
+			date={date}
+			photoAuthor={photoAuthor}
+			tags={tags}
 		/>
 		<Navigation />
 		<Interaction />
@@ -22,6 +25,9 @@ const Blog = ({ title, subtitle }) => (
 Blog.propTypes = {
 	title: PropTypes.string,
 	subtitle: PropTypes.string,
+	date: PropTypes.string,
+	photoAuthor: PropTypes.string,
+	tags: PropTypes.arrayOf(PropTypes.string)
 }
 
 export default Blog

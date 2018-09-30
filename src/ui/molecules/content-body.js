@@ -7,6 +7,7 @@ const ContentBodyLayout = styled.div`
 	display: flex;
 	flex-direction: column;
 	padding: 20px;
+	min-height: calc( 100vh - 605px );
 	${ centerBlock }
 	${ sideBars }
 `

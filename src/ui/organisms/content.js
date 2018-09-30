@@ -1,10 +1,41 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 import { ContentBodyParagraph, ContentBodyTitle } from '../atoms'
 import { ContentHeading, ContentMetadata, ContentBody } from '../molecules'
 
-const Content = ({ title, subtitle, date, photoAuthor, tags }) => (
+const mapTextToNodes = content => {
+	return content.split('#').map((chunk, idx) => {
+		//Its a link?
+		if(/\((.*)\)/.test(chunk)){
+			const [ url, label ] = chunk.replace(/\(|\)|'/g, '').split(',')
+			return <a key={idx} href={url} target='_blank' rel='noopener noreferrer'>{label}</a>
+		}
+
+		//Its bold?
+		if(/\[(.*)\]/.test(chunk)){
+			return <strong key={idx}>{chunk.replace(/\[|\]/g, '')}</strong>
+		}
+
+		//Its italics?
+		if(/\{(.*)\}/.test(chunk)){
+			return <em key={idx}>{chunk.replace(/\{|\}/g, '')}</em>
+		}
+
+		return <Fragment key={idx}>{chunk}</Fragment>
+	})
+}
+
+const mapElementToNode = ({ type, content }, idx) => {
+	switch(type){
+	case 'title':
+		return <ContentBodyTitle key={idx}>{content}</ContentBodyTitle>
+	case 'paragraph':
+		return <ContentBodyParagraph key={idx}>{mapTextToNodes(content)}</ContentBodyParagraph>
+	}
+}
+
+const Content = ({ title, subtitle, date, photoAuthor, tags, postContent }) => (
 	<div>
 		<ContentHeading
 			title={ title }
@@ -16,23 +47,9 @@ const Content = ({ title, subtitle, date, photoAuthor, tags }) => (
 			tags={tags}
 		/>
 		<ContentBody>
-			<ContentBodyParagraph>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet velit consectetur, ultricies nisi in, tempus neque. Praesent neque ex, maximus euismod dictum non, dapibus a purus. Quisque rhoncus lectus at enim aliquet feugiat eu tristique lorem. Curabitur ut finibus eros, sit amet mollis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, felis eu finibus lacinia, eros magna aliquam diam, quis tincidunt felis dolor vel ligula. Mauris tincidunt mollis arcu id auctor. Sed faucibus ut est id ultricies. Maecenas suscipit nisl in leo ultricies, sed sollicitudin libero feugiat. Aliquam pretium mi in nibh congue rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam scelerisque tincidunt nisl at vestibulum.
-			</ContentBodyParagraph>
-			<ContentBodyTitle>Subtitle 1</ContentBodyTitle>
-			<ContentBodyParagraph>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet velit consectetur, ultricies nisi in, tempus neque. Praesent neque ex, maximus euismod dictum non, dapibus a purus. Quisque rhoncus lectus at enim aliquet feugiat eu tristique lorem. Curabitur ut finibus eros, sit amet mollis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, felis eu finibus lacinia, eros magna aliquam diam, quis tincidunt felis dolor vel ligula. Mauris tincidunt mollis arcu id auctor. Sed faucibus ut est id ultricies. Maecenas suscipit nisl in leo ultricies, sed sollicitudin libero feugiat. Aliquam pretium mi in nibh congue rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam scelerisque tincidunt nisl at vestibulum.
-			</ContentBodyParagraph>
-			<ContentBodyParagraph>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet velit consectetur, ultricies nisi in, tempus neque. Praesent neque ex, maximus euismod dictum non, dapibus a purus. Quisque rhoncus lectus at enim aliquet feugiat eu tristique lorem. Curabitur ut finibus eros, sit amet mollis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, felis eu finibus lacinia, eros magna aliquam diam, quis tincidunt felis dolor vel ligula. Mauris tincidunt mollis arcu id auctor. Sed faucibus ut est id ultricies. Maecenas suscipit nisl in leo ultricies, sed sollicitudin libero feugiat. Aliquam pretium mi in nibh congue rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam scelerisque tincidunt nisl at vestibulum.
-			</ContentBodyParagraph>
-			<ContentBodyTitle>Subtitle 2</ContentBodyTitle>
-			<ContentBodyParagraph>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet velit consectetur, ultricies nisi in, tempus neque. Praesent neque ex, maximus euismod dictum non, dapibus a purus. Quisque rhoncus lectus at enim aliquet feugiat eu tristique lorem. Curabitur ut finibus eros, sit amet mollis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, felis eu finibus lacinia, eros magna aliquam diam, quis tincidunt felis dolor vel ligula. Mauris tincidunt mollis arcu id auctor. Sed faucibus ut est id ultricies. Maecenas suscipit nisl in leo ultricies, sed sollicitudin libero feugiat. Aliquam pretium mi in nibh congue rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam scelerisque tincidunt nisl at vestibulum.
-			</ContentBodyParagraph>
-			<ContentBodyParagraph>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet velit consectetur, ultricies nisi in, tempus neque. Praesent neque ex, maximus euismod dictum non, dapibus a purus. Quisque rhoncus lectus at enim aliquet feugiat eu tristique lorem. Curabitur ut finibus eros, sit amet mollis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, felis eu finibus lacinia, eros magna aliquam diam, quis tincidunt felis dolor vel ligula. Mauris tincidunt mollis arcu id auctor. Sed faucibus ut est id ultricies. Maecenas suscipit nisl in leo ultricies, sed sollicitudin libero feugiat. Aliquam pretium mi in nibh congue rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam scelerisque tincidunt nisl at vestibulum.
-			</ContentBodyParagraph>
+			{
+				postContent.map(mapElementToNode)
+			}
 		</ContentBody>
 	</div>
 )
@@ -42,7 +59,8 @@ Content.propTypes = {
 	subtitle: PropTypes.string,
 	date: PropTypes.string,
 	photoAuthor: PropTypes.string,
-	tags: PropTypes.arrayOf(PropTypes.string)
+	tags: PropTypes.arrayOf(PropTypes.string),
+	postContent: PropTypes.array
 }
 
 export default Content

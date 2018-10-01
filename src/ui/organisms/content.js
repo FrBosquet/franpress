@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import { ContentBodyParagraph, ContentBodyTitle, ContentBodyList, ContentBodySubtitle } from '../atoms'
 import { ContentHeading, ContentMetadata, ContentBody } from '../molecules'
+import ContentBodyImage from '../atoms/content-body-image'
 
 const mapTextToNodes = content => {
 	return content.split('#').map((chunk, idx) => {
@@ -32,6 +33,7 @@ const mapElementToNode = ({ type, content }, idx) => {
 	case 'paragraph':	return <ContentBodyParagraph key={idx}>{mapTextToNodes(content)}</ContentBodyParagraph>
 	case 'list': return <ContentBodyList key={idx} content={content}/>
 	case 'subtitle': return <ContentBodySubtitle key={idx}>{content}</ContentBodySubtitle>
+	case 'image': return <ContentBodyImage key={idx} content={content}/>
 	}
 }
 

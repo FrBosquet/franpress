@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
-import { ContentBodyParagraph, ContentBodyTitle } from '../atoms'
+import { ContentBodyParagraph, ContentBodyTitle, ContentBodyList } from '../atoms'
 import { ContentHeading, ContentMetadata, ContentBody } from '../molecules'
 
 const mapTextToNodes = content => {
@@ -28,10 +28,9 @@ const mapTextToNodes = content => {
 
 const mapElementToNode = ({ type, content }, idx) => {
 	switch(type){
-	case 'title':
-		return <ContentBodyTitle key={idx}>{content}</ContentBodyTitle>
-	case 'paragraph':
-		return <ContentBodyParagraph key={idx}>{mapTextToNodes(content)}</ContentBodyParagraph>
+	case 'title':	return <ContentBodyTitle key={idx}>{content}</ContentBodyTitle>
+	case 'paragraph':	return <ContentBodyParagraph key={idx}>{mapTextToNodes(content)}</ContentBodyParagraph>
+	case 'list': return <ContentBodyList key={idx} content={content}/>
 	}
 }
 

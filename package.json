@@ -4,7 +4,7 @@
 	"description": "A simple cms for regular people",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "jest --watch",
 		"start": "webpack-dev-server --open --mode development",
 		"build": "webpack",
 		"linter": "eslint . --ext .js",
@@ -31,6 +31,8 @@
 		"webpack-dev-server": "^3.1.4"
 	},
 	"dependencies": {
+		"eslint-plugin-jest": "^21.24.1",
+		"jest": "^23.6.0",
 		"react": "^16.4.0",
 		"react-dom": "^16.4.0",
 		"recompose": "^0.30.0",

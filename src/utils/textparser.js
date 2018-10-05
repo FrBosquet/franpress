@@ -1,7 +1,5 @@
 const close = /·/
-
 const splitRegex = /H\d+\^|I\^|B\^|·/g
-
 const boldRegex = /B\^/g
 const linkRegex = /H\d+\^/
 const italicRegex = /I\^/
@@ -13,6 +11,9 @@ const getType = text => {
 	if(text.search(close) === 0) return 'close'
 	return 'text'
 }
+
+const isText = type => type === 'text'
+const isTag = type => [ 'bold','link','italic' ].includes(type)
 
 const mix = text => {
 	const delimiters = text.match(splitRegex) || []
@@ -41,6 +42,7 @@ export const set = (arr, path, field, value) => {
 			return trg[route]
 		}else{
 			if(!trg[route].content) trg[route].content = []
+			if(typeof trg[route].content !== 'object') trg[route].content = []
 			return trg[route].content 
 		}
 	}, arr)
@@ -60,31 +62,46 @@ export const goUp = path => {
 export const goRight = path => `${path}.0`
 
 export const goLeft = path => {
-	if(path.length === 1) return path
 	const splitPath = path.split('.')
 	splitPath.pop()
 	return splitPath.join('.')
 }
 
 export const getTree = text => {
-	const abc = mix(text)
-	return abc
+	return mix(text)
 		.reduce((acc, value) => {
 			let { content, pointer } = acc
 			const type = getType(value)
+			const current = get(content, pointer)
 
 			if(type === 'text'){
 				set(content, pointer, 'content', value )
 				if(!get(content, pointer).type)	set(content, pointer, 'type', 'text' )
-				pointer = goUp(pointer)
+
 			}else if(type === 'close'){
-				pointer = goLeft(pointer)
-			}else{
-				const current = get(content, pointer)
-				if(current && current.type){
-					pointer = goRight(pointer)
+				if(current){
+					pointer = goUp(pointer)
+				}else{
+					pointer = goUp(goLeft(pointer))
 				}
-				set(content, pointer, 'type', type)
+
+			}else{
+				if(current){
+
+					if(current.type && isTag(current.type)){
+						pointer = goRight(pointer)
+
+						if(current.content) {
+							set(content, pointer, 'content', current.content )
+							set(content, pointer, 'type', 'text' )
+							pointer = goUp(pointer)
+						}
+					}else if(current.type && isText(current.type)){
+						pointer = goUp(pointer)
+					}	
+				}
+
+				set(content, pointer, 'type', type )
 			}
 
 			return { content, pointer }

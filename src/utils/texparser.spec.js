@@ -205,4 +205,52 @@ describe('Get tree',() => {
 			content: 'italic'
 		} ])
 	})
+
+	test('plain text, then bold with nested link, plain text and italic', () => {
+		const content = 'plainB^boldH3^link··plainI^italic·'
+		expect(getTree(content)).toEqual([ {
+			type: 'text',
+			content: 'plain'
+		},{
+			type: 'bold',
+			content: [
+				{
+					type: 'text',
+					content: 'bold'
+				},
+				{
+					type: 'link',
+					content: 'link'
+				}
+			]
+		},{
+			type: 'text',
+			content: 'plain'
+		},{
+			type: 'italic',
+			content: 'italic'
+		} ])
+	})
+
+	test('bold, nested text and link with nested italic', () => {
+		const content = 'B^boldH3^I^italic···'
+		expect(getTree(content)).toEqual([ {
+			type: 'bold',
+			content: [
+				{
+					type: 'text',
+					content: 'bold'
+				},
+				{
+					type: 'link',
+					content: [
+						{
+							type: 'italic',
+							content: 'italic'
+						}
+					]
+				}
+			]
+		} ])
+	})
 })

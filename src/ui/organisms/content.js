@@ -1,31 +1,21 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
+import { getTree } from '../../utils/textparser'
 import { ContentBodyParagraph, ContentBodyTitle, ContentBodyList, ContentBodySubtitle } from '../atoms'
 import { ContentHeading, ContentMetadata, ContentBody } from '../molecules'
 import ContentBodyImage from '../atoms/content-body-image'
 
-const mapTextToNodes = content => {
-	return content.split('#').map((chunk, idx) => {
-		//Its a link?
-		if(/\((.*)\)/.test(chunk)){
-			const [ url, label ] = chunk.replace(/\(|\)|'/g, '').split(',')
-			return <a key={idx} href={url} target='_blank' rel='noopener noreferrer'>{label}</a>
-		}
-
-		//Its bold?
-		if(/\[(.*)\]/.test(chunk)){
-			return <strong key={idx}>{chunk.replace(/\[|\]/g, '')}</strong>
-		}
-
-		//Its italics?
-		if(/\{(.*)\}/.test(chunk)){
-			return <em key={idx}>{chunk.replace(/\{|\}/g, '')}</em>
-		}
-
-		return <Fragment key={idx}>{chunk}</Fragment>
-	})
+const parseBranch = ({ type, content }, idx) => {
+	switch(type){
+	case 'bold': return <strong key={idx}>{Array.isArray(content) ? content.map(parseBranch) : content}</strong>
+	case 'link': return <a key={idx} href='#' target='_blank' rel='noopener noreferrer'>{Array.isArray(content) ? content.map(parseBranch) : content}</a>
+	case 'italic': return <em key={idx}>{Array.isArray(content) ? content.map(parseBranch) : content}</em>
+	case 'text': return <Fragment key={idx}>{content}</Fragment>
+	}
 }
+
+const mapTextToNodes = content => getTree(content).map(parseBranch)
 
 const mapElementToNode = ({ type, content }, idx) => {
 	switch(type){

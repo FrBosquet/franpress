@@ -161,16 +161,20 @@ describe('Get tree',() => {
   
 	test('parse link text', () => {
 		const content = 'H24^link text·'
-		expect(getTree(content)).toEqual([ {
+		const assets = { 24: 'url' }
+		expect(getTree(content, assets)).toEqual([ {
 			type: 'link',
-			content: 'link text'
+			content: 'link text',
+			asset: 'url'
 		} ])
 	})
 
 	test('nest a bold into a link', () => {
 		const content = 'H24^B^bold link··'
-		expect(getTree(content)).toEqual([ {
+		const assets = { 24: 'url' }
+		expect(getTree(content, assets)).toEqual([ {
 			type: 'link',
+			asset: 'url',
 			content: [ {
 				type: 'bold',
 				content: 'bold link'
@@ -191,7 +195,9 @@ describe('Get tree',() => {
 
 	test('plain text, then bold, then link, then italics', () => {
 		const content = 'plainB^bold·H3^link·I^italic·'
-		expect(getTree(content)).toEqual([ {
+		const assets = { 3: 'url' }
+
+		expect(getTree(content, assets)).toEqual([ {
 			type: 'text',
 			content: 'plain'
 		},{
@@ -199,7 +205,8 @@ describe('Get tree',() => {
 			content: 'bold'
 		},{
 			type: 'link',
-			content: 'link'
+			content: 'link',
+			asset: 'url'
 		},{
 			type: 'italic',
 			content: 'italic'
@@ -208,7 +215,8 @@ describe('Get tree',() => {
 
 	test('plain text, then bold with nested link, plain text and italic', () => {
 		const content = 'plainB^boldH3^link··plainI^italic·'
-		expect(getTree(content)).toEqual([ {
+		const assets = { 3: 'url' }
+		expect(getTree(content, assets)).toEqual([ {
 			type: 'text',
 			content: 'plain'
 		},{
@@ -220,7 +228,8 @@ describe('Get tree',() => {
 				},
 				{
 					type: 'link',
-					content: 'link'
+					content: 'link',
+					asset: 'url'
 				}
 			]
 		},{
@@ -234,7 +243,9 @@ describe('Get tree',() => {
 
 	test('bold, nested text and link with nested italic', () => {
 		const content = 'B^boldH3^I^italic···'
-		expect(getTree(content)).toEqual([ {
+		const assets = { 3: 'url' }
+
+		expect(getTree(content, assets)).toEqual([ {
 			type: 'bold',
 			content: [
 				{
@@ -243,6 +254,7 @@ describe('Get tree',() => {
 				},
 				{
 					type: 'link',
+					asset: 'url',
 					content: [
 						{
 							type: 'italic',

@@ -5,11 +5,13 @@ const BOLD = 'bold'
 const LINK = 'link'
 const ITALIC = 'italic'
 const CLOSE = 'close'
+const ASSET = 'asset'
 
 const close = /·/
 const splitRegex = /H\d+\^|I\^|B\^|·/g
 const boldRegex = /B\^/g
 const linkRegex = /H\d+\^/
+const assetRegex = /\d+/
 const italicRegex = /I\^/
 
 const getType = text => {
@@ -24,7 +26,9 @@ const isLast = (arr, idx) => idx === arr.length - 1
 const isObject = target => typeof target !== 'object'
 const isEmptyObject = obj => Object.keys(obj).length === 0
 const isNotEmptyObject = obj => !isEmptyObject(obj)
+const isLink = type => type === LINK
 
+const getAssetIndex = tag => tag.match(assetRegex)[0]
 const extractTags = text => text.match(splitRegex) || []
 const extractContent = text => text.split(splitRegex)
 
@@ -76,7 +80,7 @@ export const goUp = path => {
 	return `${splitPath.join('.')}.${change}`
 }
 
-const mutateTree = (tree, mutator) => {
+const mutateTree = assets => (tree, mutator) => {
 	let { content, pointer } = tree
 	const type = getType(mutator)
 	const current = get(content, pointer)
@@ -114,12 +118,16 @@ const mutateTree = (tree, mutator) => {
 			}
 		}
 		set(content, pointer, TYPE, type )
+
+		if(isLink(type)){
+			assets && set(content, pointer, ASSET, assets[getAssetIndex(mutator)])
+		}
 	}
 	return { content, pointer }
 }
 
-export const getTree = text => 
+export const getTree = (text, assets) => 
 	merge(text)
-		.reduce(mutateTree, { content: [ {} ],	pointer: '0' })
+		.reduce(mutateTree(assets), { content: [ {} ],	pointer: '0' })
 		.content
 		.filter(isNotEmptyObject)

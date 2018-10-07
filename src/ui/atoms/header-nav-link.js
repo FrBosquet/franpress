@@ -19,7 +19,7 @@ const HeaderNavLink = styled.button`
     outline: none;
   }
 
-  transition: all 0.2s ease-in;
+  transition: all 0.4s ease-in;
 `
 
 HeaderNavLink.propTypes = {

@@ -16,14 +16,14 @@ const HeaderLayout = styled.div`
 	align-items: initial;
   background: linear-gradient(to bottom, rgba(235,235,235,0.2) 0%, rgba(0,0,0,0) 100%);
 `
-const Header = () => (
+const Header = ({ dark }) => (
 	<HeaderLayout>
-		<HeaderLogo dark />
-		<HeaderNav dark />
+		<HeaderLogo dark={dark} />
+		<HeaderNav dark={dark} />
 	</HeaderLayout>
 )
 
-HeaderLayout.propTypes = {
+Header.propTypes = {
 	dark: PropTypes.bool
 }
 

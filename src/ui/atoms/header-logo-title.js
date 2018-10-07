@@ -8,6 +8,7 @@ const HeaderLogoTitle = styled.h1`
   font-size: 36px;
   font-weight: 300;
   font-family: 'Oswald', sans-serif;
+  transition: all 0.4s ease-in;
 `
 
 HeaderLogoTitle.propTypes = {

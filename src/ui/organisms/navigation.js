@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { NavigationEntry } from '../molecules'
@@ -20,14 +21,20 @@ const Layout = styled.div`
   }
 `
 
-const Navigation = () =>
+const Navigation = ({ items }) =>
 	<Layout>
-		<NavigationEntry title='Section 1' />
-		<NavigationEntry subtitle selected={ true } title='Subsection 1' />
-		<NavigationEntry subtitle title='Subsection 2' />
-		<NavigationEntry title='Section 2' />
-		<NavigationEntry subtitle title='Subsection 1' />
-		<NavigationEntry subtitle title='Subsection 2' />
+		{ items.map(({ type, content, selected, onClick }, idx) => 
+			<NavigationEntry 
+				key={idx}
+				subtitle={ type === 'subtitle'}
+				onClick={onClick}
+				title={content}
+				selected={selected}
+			/>)}
 	</Layout>
+
+Navigation.propTypes = {
+	items: PropTypes.array
+}
 
 export default Navigation

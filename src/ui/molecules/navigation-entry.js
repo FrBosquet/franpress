@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 
 import { NavigationEntrySection, NavigationEntrySubsection } from '../atoms'
 
-const Molecule = ({ title, subtitle, selected }) => {
+const Molecule = ({ title, subtitle, selected, onClick }) => {
 	const Component = subtitle ? NavigationEntrySubsection : NavigationEntrySection
-	return <Component selected={ selected }>{ title }</Component>
+	return <Component onClick={onClick} selected={ selected }>{ title }</Component>
 }
 
 Molecule.propTypes = {
+	onClick: PropTypes.func,
 	title: PropTypes.string,
 	subtitle: PropTypes.bool,
 	selected: PropTypes.bool

@@ -10,14 +10,14 @@ const Atom = styled.button`
   width: 135px;
   padding-left: 10px;
   cursor: pointer;
+  background: none;
   border: none;
-  background-color: #EBEBEB;
   color: #931A38;
   text-align: left;
-  font-family: 'Oswald';
+  font-family: 'Oswald', sans-serif;
   font-weight: 200;
   font-size: 14px;
-  transition: all 0.2s ease-in;
+  transition: all 0.4s ease-in;
 
   ${ props => props.selected && selected}
 `

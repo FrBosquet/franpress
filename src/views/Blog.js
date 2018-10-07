@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { compose, setDisplayName, withProps } from 'recompose'
+import { compose, setDisplayName, withProps, withStateHandlers, lifecycle } from 'recompose'
 
 import mockData from './mockPost.json'
 import Blog from '../ui/templates/blog'
@@ -21,10 +21,10 @@ const mapTextToNodes = (content, assets) => getTree(content, assets).map(parseBr
 
 const mapContentToNodes = ({ type, content, assets }, idx) => {
 	switch(type){
-	case 'title':	return <ContentBodyTitle key={idx}>{content}</ContentBodyTitle>
+	case 'title':	return <ContentBodyTitle id={content.replace(' ', '').toLowerCase()} key={idx}>{content}</ContentBodyTitle>
+	case 'subtitle': return <ContentBodySubtitle id={content.replace(' ', '').toLowerCase()} key={idx}>{content}</ContentBodySubtitle>
 	case 'paragraph':	return <ContentBodyParagraph key={idx}>{mapTextToNodes(content, assets)}</ContentBodyParagraph>
 	case 'list': return <ContentBodyList key={idx} content={content}/>
-	case 'subtitle': return <ContentBodySubtitle key={idx}>{content}</ContentBodySubtitle>
 	case 'image': return <ContentBodyImage key={idx} content={content}/>
 	}
 }
@@ -41,11 +41,39 @@ const enhancer = compose(
 		navigation: [
 			{ type: 'title', content: 'Section 1', id:'section1' },
 			{ type: 'subtitle', content: 'Subsection 1', id:'subsection1' },
-			{ type: 'subtitle', content: 'Subsection 2', id:'subsection2' },
 			{ type: 'title', content: 'Section 2', id:'section2' },
+			{ type: 'subtitle', content: 'Subsection 2', id:'subsection2' },
 			{ type: 'subtitle', content: 'Subsection 3', id:'subsection3' },
-			{ type: 'subtitle', content: 'Subsection 4', id:'subsection4' }
 		]
+	})),
+	withStateHandlers({ selected: null, darkHeader: false }, {
+		setSelected: () => id => ({ selected: id }),
+		setDarkHeader: () => state => ({ darkHeader: state })
+	}),
+	lifecycle({
+		componentDidMount(){
+			const heights = this.props.navigation.map(({ id }) => ({
+				id,
+				height: document.getElementById(id).offsetTop
+			}))
+
+			document.addEventListener('scroll', event => {
+				const { selected, setSelected, darkHeader, setDarkHeader } = this.props
+				const position = event.target.scrollingElement.scrollTop
+				const currentId = heights.find(({ height }) => height  >= position -1).id
+
+				if(currentId !== selected) setSelected(currentId)
+				if(position >= 510 && !darkHeader) setDarkHeader(true)
+				if(position < 510 && darkHeader) setDarkHeader(false)
+			})
+		}
+	}),
+	withProps(({ navigation, selected }) => ({
+		navigation: navigation.map(({ type, content, id }) => ({ 
+			type,	content, id,
+			selected: id === selected,
+			onClick: () =>	document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' })
+		}))
 	}))
 )
 

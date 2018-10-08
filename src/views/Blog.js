@@ -60,7 +60,7 @@ const enhancer = compose(
 			document.addEventListener('scroll', event => {
 				const { selected, setSelected, darkHeader, setDarkHeader } = this.props
 				const position = event.target.scrollingElement.scrollTop
-				const currentId = heights.find(({ height }) => height  >= position -1).id
+				const currentId = heights.find(({ height }) => height  >= position -10).id
 
 				if(currentId !== selected) setSelected(currentId)
 				if(position >= 510 && !darkHeader) setDarkHeader(true)

@@ -1,0 +1,16 @@
+{
+  "name": "franpress-server",
+  "version": "1.0.0",
+  "description": "A graphql server for franpress CMS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "graphql",
+    "apollo",
+    "franpress"
+  ],
+  "author": "Fran Bosquet",
+  "license": "ISC"
+}

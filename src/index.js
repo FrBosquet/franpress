@@ -1,6 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import ApolloClient from 'apollo-boost'
 
 import Blog from './views/Blog'
+import { ApolloProvider } from 'react-apollo'
 
-ReactDOM.render(<Blog />, document.getElementById('App'))
+const client = new ApolloClient({
+	uri: 'http://localhost:4000'
+})
+
+ReactDOM.render(
+	<ApolloProvider client={client}>
+		<Blog />
+	</ApolloProvider>
+	, document.getElementById('App'))

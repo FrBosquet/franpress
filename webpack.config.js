@@ -16,6 +16,11 @@ module.exports = {
 			{
 				test: /\.css$/,
 				use: [ 'style-loader', 'css-loader' ]
+			},
+			{
+				type: 'javascript/auto',
+				test: /\.mjs$/,
+				use: []
 			}
 		]
 	},

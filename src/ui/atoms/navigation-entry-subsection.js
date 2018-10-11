@@ -19,6 +19,10 @@ const Atom = styled.button`
   font-size: 14px;
   transition: all 0.4s ease-in;
 
+  &:focus{
+    outline: #4B0013 auto 5px;
+  }
+
   ${ props => props.selected && selected}
 `
 

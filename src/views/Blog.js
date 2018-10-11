@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react'
 import { compose, setDisplayName, withProps, withStateHandlers, lifecycle } from 'recompose'
 
-import mockData from './mockPost.json'
 import Blog from '../ui/templates/blog'
 import { getTree } from '../utils/textparser'
 
 import { ContentBodyTitle, ContentBodyParagraph, ContentBodyList, ContentBodySubtitle } from '../ui/atoms'
 import ContentBodyImage from '../ui/atoms/content-body-image'
+import { withPost } from '../modules/post/hocs'
 
 const parseBranch = ({ type, content, asset }, idx) => {
 	switch(type){
@@ -19,32 +19,32 @@ const parseBranch = ({ type, content, asset }, idx) => {
 
 const mapTextToNodes = (content, assets) => getTree(content, assets).map(parseBranch)
 
-const mapContentToNodes = ({ type, content, assets }, idx) => {
+const mapContentToNodes = ({ type, content, assets, items }, idx) => {
 	switch(type){
 	case 'title':	return <ContentBodyTitle id={content.replace(' ', '').toLowerCase()} key={idx}>{content}</ContentBodyTitle>
 	case 'subtitle': return <ContentBodySubtitle id={content.replace(' ', '').toLowerCase()} key={idx}>{content}</ContentBodySubtitle>
 	case 'paragraph':	return <ContentBodyParagraph key={idx}>{mapTextToNodes(content, assets)}</ContentBodyParagraph>
-	case 'list': return <ContentBodyList key={idx} content={content}/>
-	case 'image': return <ContentBodyImage key={idx} content={content}/>
+	case 'list': return <ContentBodyList key={idx} content={items}/>
+	case 'image': return <ContentBodyImage key={idx} url={assets[0]} caption={content}/>
 	}
+}
+
+const mapContentToNavigation = content => {
+	return content
+		.filter(({ type }) => type === 'title' || type === 'subtitle')
+		.map(({ type, content }) => ({ 
+			type, 
+			content, 
+			id: content.toLowerCase().replace(' ', '') }))
 }
 
 const enhancer = compose(
 	setDisplayName('BlogEnhanced'),
-	withProps( () => ({
-		title: 'Post title',
-		subtitle: 'Post subtitle',
-		date: '18 de Julio de 2018',
-		photoAuthor: 'Aaron Burden/Unsplash',
-		tags: [ 'Blog', 'React', 'Recompose' ],
-		content: <Fragment>{mockData.map(mapContentToNodes)}</Fragment>,
-		navigation: [
-			{ type: 'title', content: 'Section 1', id:'section1' },
-			{ type: 'subtitle', content: 'Subsection 1', id:'subsection1' },
-			{ type: 'title', content: 'Section 2', id:'section2' },
-			{ type: 'subtitle', content: 'Subsection 2', id:'subsection2' },
-			{ type: 'subtitle', content: 'Subsection 3', id:'subsection3' },
-		]
+	withPost,
+	withProps( ({ content }) => ({
+		content: <Fragment>{content.map(mapContentToNodes)}</Fragment>,
+		navigation: mapContentToNavigation(content)
+		
 	})),
 	withStateHandlers({ selected: null, darkHeader: false }, {
 		setSelected: () => id => ({ selected: id }),
@@ -66,6 +66,8 @@ const enhancer = compose(
 				if(position >= 510 && !darkHeader) setDarkHeader(true)
 				if(position < 510 && darkHeader) setDarkHeader(false)
 			})
+
+			this.props.setSelected(heights[0].id)
 		}
 	}),
 	withProps(({ navigation, selected }) => ({

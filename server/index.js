@@ -6,6 +6,7 @@ const typeDefs = gql`
   type Content {
     type: String
     content: String
+    items: [String]
     assets: [String]
   }
 

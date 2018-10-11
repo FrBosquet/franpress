@@ -21,16 +21,14 @@ const ContentBodyImageLayout = styled.figure`
     }
   `
 
-const ContentBodyImage = ({ content }) => <ContentBodyImageLayout>
-	<img src={content.url} alt={content.caption}/>
-	<figcaption>{content.caption}</figcaption>
+const ContentBodyImage = ({ url, caption }) => <ContentBodyImageLayout>
+	<img src={url} alt={caption}/>
+	<figcaption>{caption}</figcaption>
 </ContentBodyImageLayout>
 
 ContentBodyImage.propTypes = {
-	content: PropTypes.shape({
-		url: PropTypes.string,
-		caption: PropTypes.string
-	})
+	url: PropTypes.string,
+	caption: PropTypes.string
 }
 
 export default ContentBodyImage

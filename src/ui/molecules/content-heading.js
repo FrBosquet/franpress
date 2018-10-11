@@ -32,8 +32,8 @@ const ContentHeading = ({ title, subtitle }) => (
 )
 
 ContentHeading.propTypes = {
-	title: PropTypes.string.isRequired,
-	subtitle: PropTypes.string.isRequired
+	title: PropTypes.string,
+	subtitle: PropTypes.string
 }
 
 export default ContentHeading

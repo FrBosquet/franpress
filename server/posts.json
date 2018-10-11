@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "title": "Post title",
+    "title": "Programando un blog desde cero",
 		"subtitle": "Post subtitle",
 		"date": "18 de Julio de 2018",
 		"photoAuthor": "Aaron Burden/Unsplash",
@@ -25,7 +25,7 @@
       },
       {
         "type": "list",
-        "content": [
+        "items": [
           "Lorem",
           "Ipsum",
           "Dolor",
@@ -66,10 +66,8 @@
       },
       {
         "type": "image",
-        "content": {
-          "url": "https://i.ytimg.com/vi/YjqDhCGaR4g/maxresdefault.jpg",
-          "caption": "Fancy image"
-        }
+        "content": "Fancy image",
+        "assets": ["https://i.ytimg.com/vi/YjqDhCGaR4g/maxresdefault.jpg"]
       },
       {
         "type": "paragraph",
@@ -78,6 +76,14 @@
       {
         "type": "subtitle",
         "content": "Subsection 3"
+      },
+      {
+        "type": "paragraph",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet velit consectetur, ultricies nisi in, tempus neque. Praesent neque ex, maximus euismod dictum non, dapibus a purus. Quisque rhoncus lectus at enim aliquet feugiat eu tristique lorem. Curabitur ut finibus eros, sit amet mollis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, felis eu finibus lacinia, eros magna aliquam diam, quis tincidunt felis dolor vel ligula. Mauris tincidunt mollis arcu id auctor. Sed faucibus ut est id ultricies. Maecenas suscipit nisl in leo ultricies, sed sollicitudin libero feugiat. Aliquam pretium mi in nibh congue rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam scelerisque tincidunt nisl at vestibulum."
+      },
+      {
+        "type": "subtitle",
+        "content": "Cierre"
       },
       {
         "type": "paragraph",

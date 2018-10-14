@@ -8,7 +8,9 @@
 		"start": "webpack-dev-server --open --mode development",
 		"build": "webpack",
 		"linter": "eslint . --ext .js",
-		"lintfix": "eslint . --ext .js --fix"
+		"lintfix": "eslint . --ext .js --fix",
+		"server": "nodemon server/index.js",
+		"serverdev": "nodemon --inspect server/index.js"
 	},
 	"keywords": [
 		"blog",

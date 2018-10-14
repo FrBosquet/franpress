@@ -44,7 +44,6 @@ const enhancer = compose(
 	withProps( ({ content }) => ({
 		content: <Fragment>{content.map(mapContentToNodes)}</Fragment>,
 		navigation: mapContentToNavigation(content)
-		
 	})),
 	withStateHandlers({ selected: null, darkHeader: false }, {
 		setSelected: () => id => ({ selected: id }),
@@ -56,6 +55,8 @@ const enhancer = compose(
 				id,
 				height: document.getElementById(id).offsetTop
 			}))
+
+			console.log(this.props.selectedPost)
 
 			document.addEventListener('scroll', event => {
 				const { selected, setSelected, darkHeader, setDarkHeader } = this.props

@@ -19,9 +19,10 @@ export const withPost = compose(
         type
       }
     }
+    selectedPost @client
   }`,
 	{
-		props: ({ data: { post } }) =>  post 
+		props: ({ data: { post, selectedPost } }) => ({ ...post, selectedPost })
 	}),
 	branch(({ title }) => !title, renderComponent(() => <div>Loading...</div>))
 )

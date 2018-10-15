@@ -3,26 +3,38 @@ import { graphql } from 'react-apollo'
 import { compose, setDisplayName, branch, renderComponent } from 'recompose'
 import gql from 'graphql-tag'
 
+export const withSelectedPostId = compose(
+	setDisplayName('WithSelectedPostId'),
+	graphql(gql`{ selectedPost @client }`, {
+		props: ({ data: { selectedPost } }) => ({ selectedPost })
+	})
+)
+
 export const withPost = compose(
 	setDisplayName('WithPost'),
-	graphql(gql`{
-    post(id: "1"){
-      title
-      subtitle
-      date
-      photoAuthor
-      tags
-      content{
-        assets
-        content
-        items
-        type
+	withSelectedPostId,
+	graphql(gql`
+    query Post($id: ID!){
+      post(id: $id){
+        title
+        subtitle
+        date
+        photoAuthor
+        tags
+        content{
+          assets
+          content
+          items
+          type
+        }
       }
-    }
-    selectedPost @client
-  }`,
+    }  
+  `,
 	{
-		props: ({ data: { post, selectedPost } }) => ({ ...post, selectedPost })
+		options: props => ({ variables: { id: props.selectedPost } }),
+		props: ({ data }) => {
+			return { ...data.post }
+		}
 	}),
 	branch(({ title }) => !title, renderComponent(() => <div>Loading...</div>))
 )

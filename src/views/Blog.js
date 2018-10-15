@@ -51,12 +51,13 @@ const enhancer = compose(
 	}),
 	lifecycle({
 		componentDidMount(){
-			const heights = this.props.navigation.map(({ id }) => ({
+			const { navigation } = this.props
+			if( !navigation.length ) return
+
+			const heights = navigation.map(({ id }) => ({
 				id,
 				height: document.getElementById(id).offsetTop
 			}))
-
-			console.log(this.props.selectedPost)
 
 			document.addEventListener('scroll', event => {
 				const { selected, setSelected, darkHeader, setDarkHeader } = this.props

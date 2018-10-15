@@ -1,4 +1,25 @@
-[
+[ 
+  {
+    "id": "2",
+    "title": "Post 2",
+		"subtitle": "Post subtitle",
+		"date": "18 de Julio de 2018",
+		"photoAuthor": "Aaron Burden/Unsplash",
+    "tags": [ "Blog", "React", "Recompose" ],
+    "content": []    
+  },
+  {
+    "id": "3",
+    "title": "Post 3",
+		"subtitle": "Sin subtitulo",
+		"date": "18 de Julio de 2018",
+		"photoAuthor": "Aaron Burden/Unsplash",
+		"tags": [ "Blog", "React", "Recompose" ],
+    "content": [{
+      "type": "paragraph",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet velit consectetur, ultricies nisi in, tempus neque. Praesent neque ex, maximus euismod dictum non, dapibus a purus. B^Quisque rhoncus lectus at enim aliquet·. feugiat eu tristique lorem. Curabitur ut finibus eros, sit amet mollis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, felis eu finibus lacinia, eros magna aliquam diam, quis tincidunt felis dolor vel ligula. Mauris tincidunt mollis arcu id auctor. Sed faucibus ut est id ultricies. Maecenas suscipit nisl in leo ultricies, sed I^sollicitudin libero feugiat·. Aliquam pretium mi in nibh congue rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. B^Vestibulum ante ipsum primis in faucibus orci luctus et ultrices··. posuere cubilia Curae; Etiam scelerisque tincidunt nisl at vestibulum."
+    }]
+  },
   {
     "id": "1",
     "title": "Programando un blog desde cero",

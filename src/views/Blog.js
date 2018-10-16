@@ -2,41 +2,9 @@ import React, { Fragment } from 'react'
 import { compose, setDisplayName, withProps, withStateHandlers, lifecycle } from 'recompose'
 
 import Blog from '../ui/templates/blog'
-import { getTree } from '../utils/textparser'
 
-import { ContentBodyTitle, ContentBodyParagraph, ContentBodyList, ContentBodySubtitle } from '../ui/atoms'
-import ContentBodyImage from '../ui/atoms/content-body-image'
 import { withPost } from '../modules/post/hocs'
-
-const parseBranch = ({ type, content, asset }, idx) => {
-	switch(type){
-	case 'bold': return <strong key={idx}>{Array.isArray(content) ? content.map(parseBranch) : content}</strong>
-	case 'link': return <a key={idx} href={asset} target='_blank' rel='noopener noreferrer'>{Array.isArray(content) ? content.map(parseBranch) : content}</a>
-	case 'italic': return <em key={idx}>{Array.isArray(content) ? content.map(parseBranch) : content}</em>
-	case 'text': return <Fragment key={idx}>{content}</Fragment>
-	}
-}
-
-const mapTextToNodes = (content, assets) => getTree(content, assets).map(parseBranch)
-
-const mapContentToNodes = ({ type, content, assets, items }, idx) => {
-	switch(type){
-	case 'title':	return <ContentBodyTitle id={content.replace(' ', '').toLowerCase()} key={idx}>{content}</ContentBodyTitle>
-	case 'subtitle': return <ContentBodySubtitle id={content.replace(' ', '').toLowerCase()} key={idx}>{content}</ContentBodySubtitle>
-	case 'paragraph':	return <ContentBodyParagraph key={idx}>{mapTextToNodes(content, assets)}</ContentBodyParagraph>
-	case 'list': return <ContentBodyList key={idx} content={items}/>
-	case 'image': return <ContentBodyImage key={idx} url={assets[0]} caption={content}/>
-	}
-}
-
-const mapContentToNavigation = content => {
-	return content
-		.filter(({ type }) => type === 'title' || type === 'subtitle')
-		.map(({ type, content }) => ({ 
-			type, 
-			content, 
-			id: content.toLowerCase().replace(' ', '') }))
-}
+import { mapContentToNodes, mapContentToNavigation } from '../utils/content'
 
 const enhancer = compose(
 	setDisplayName('BlogEnhanced'),

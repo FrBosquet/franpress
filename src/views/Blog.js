@@ -14,7 +14,7 @@ const enhancer = compose(
 		navigation: mapContentToNavigation(content)
 	})),
 	withStateHandlers({ selected: null, darkHeader: false }, {
-		setSelected: () => id => ({ selected: id }),
+		setHighlighted: () => id => ({ selected: id }),
 		setDarkHeader: () => state => ({ darkHeader: state })
 	}),
 	lifecycle({
@@ -28,16 +28,16 @@ const enhancer = compose(
 			}))
 
 			document.addEventListener('scroll', event => {
-				const { selected, setSelected, darkHeader, setDarkHeader } = this.props
+				const { selected, setHighlighted, darkHeader, setDarkHeader } = this.props
 				const position = event.target.scrollingElement.scrollTop
 				const currentId = heights.find(({ height }) => height  >= position -10).id
 
-				if(currentId !== selected) setSelected(currentId)
+				if(currentId !== selected) setHighlighted(currentId)
 				if(position >= 510 && !darkHeader) setDarkHeader(true)
 				if(position < 510 && darkHeader) setDarkHeader(false)
 			})
 
-			this.props.setSelected(heights[0].id)
+			this.props.setHighlighted(heights[0].id)
 		}
 	}),
 	withProps(({ navigation, selected }) => ({

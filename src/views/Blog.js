@@ -3,12 +3,13 @@ import { compose, setDisplayName, withProps, withStateHandlers, lifecycle } from
 
 import Blog from '../ui/templates/blog'
 
-import { withPost } from '../modules/post/hocs'
+import { withPost, withPostSelector } from '../modules/post/hocs'
 import { mapContentToNodes, mapContentToNavigation } from '../utils/content'
 
 const enhancer = compose(
 	setDisplayName('BlogEnhanced'),
 	withPost,
+	withPostSelector,
 	withProps( ({ content }) => ({
 		content: <Fragment>{content.map(mapContentToNodes)}</Fragment>,
 		navigation: mapContentToNavigation(content)

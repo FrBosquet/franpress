@@ -10,6 +10,17 @@ export const withSelectedPostId = compose(
 	})
 )
 
+export const withPostSelector = compose(
+	setDisplayName('WithPostSelector'),
+	graphql(gql`
+    mutation SetActivePost($id: ID!){
+      setActivePost(id: $id) @client
+    }
+  `,{
+		props: ({ mutate }) => ({ setActivePost: id => mutate({ variables: { id } }) })
+	})
+)
+
 export const withPost = compose(
 	setDisplayName('WithPost'),
 	withSelectedPostId,

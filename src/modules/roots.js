@@ -4,8 +4,8 @@ export const defaults = {
 
 export const resolvers = {
 	Mutation: {
-		setActivePost: (_, { id }, { cache }) => {
-			cache.writeData({ id: 'selectedPost', data: id })
+		setActivePost: (parent, { id }, { cache }) => {
+			cache.writeData({ data: { selectedPost: id } })
 			return id
 		}
 	}

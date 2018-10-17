@@ -18,6 +18,8 @@ const typeDefs = gql`
     date: String
     tags: [String]
     content: [Content]
+    nextPost: String
+    prevPost: String
   }
 
   type Query {
@@ -32,7 +34,6 @@ const resolvers = {
 		post: (root, args) => {
 			if(args.id) return posts.find(post => post.id === args.id)
 			if(args.url) return posts.find(post => {
-				console.log(post.title.toLowerCase().replace(' ', '-'))
 				return post.title.toLowerCase().replace(' ', '-') === args.url
 			})
 		}

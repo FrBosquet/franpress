@@ -5,7 +5,18 @@ import { Content, Header, Navigation, Interaction } from '../organisms'
 import { Copy } from '../organisms/copy'
 import { Shadows } from '../organisms/shadows'
 
-const Blog = ({ title, subtitle, date, photoAuthor, tags, content, navigation, darkHeader }) => (
+const Blog = ({
+	title,
+	subtitle,
+	date,
+	photoAuthor,
+	tags,
+	content,
+	navigation,
+	darkHeader,
+	nextPost,
+	prevPost
+}) => (
 	<div>
 		<Header dark={darkHeader} />
 		<Shadows />
@@ -20,12 +31,17 @@ const Blog = ({ title, subtitle, date, photoAuthor, tags, content, navigation, d
 		<Navigation
 			items={navigation}
 		/>
-		<Interaction />
+		<Interaction 
+			nextPost={nextPost}
+			prevPost={prevPost}
+		/>
 		<Copy />
 	</div>
 )
 
 Blog.propTypes = {
+	nextPost: PropTypes.func,
+	prevPost: PropTypes.func,
 	content: PropTypes.object,
 	navigation: PropTypes.array,
 	tags: PropTypes.arrayOf(PropTypes.string),

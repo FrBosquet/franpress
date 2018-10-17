@@ -32,6 +32,8 @@ export const withPost = compose(
         date
         photoAuthor
         tags
+        nextPost
+        prevPost
         content{
           assets
           content

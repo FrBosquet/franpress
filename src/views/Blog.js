@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { compose, setDisplayName, withProps, withStateHandlers, lifecycle } from 'recompose'
+import { compose, setDisplayName, withProps, withStateHandlers, lifecycle, withHandlers } from 'recompose'
 
 import Blog from '../ui/templates/blog'
 
@@ -10,10 +10,13 @@ const enhancer = compose(
 	setDisplayName('BlogEnhanced'),
 	withPost,
 	withPostSelector,
-	withProps( ({ content }) => ({
-		content: <Fragment>{content.map(mapContentToNodes)}</Fragment>,
-		navigation: mapContentToNavigation(content)
-	})),
+	withProps( ({ content, setActivePost, nextPost, prevPost }) => {
+		return{
+			content: <Fragment>{content.map(mapContentToNodes)}</Fragment>,
+			navigation: mapContentToNavigation(content),
+			nextPost: nextPost ? (() => setActivePost(nextPost)) : undefined,
+			prevPost: prevPost ? (() => setActivePost(prevPost)) : undefined
+		}}),
 	withStateHandlers({ selected: null, darkHeader: false }, {
 		setHighlighted: () => id => ({ selected: id }),
 		setDarkHeader: () => state => ({ darkHeader: state })

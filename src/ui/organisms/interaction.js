@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { InteractionOption } from '../molecules'
@@ -20,14 +21,19 @@ const Layout = styled.div`
   }
 `
 
-const Navigation = () =>
+const Navigation = ({ nextPost, prevPost }) =>
 	<Layout>
 		<InteractionOption label='compartir' type='twitter' />
 		<InteractionOption label='compartir' type='facebook' />
 		<InteractionOption label='comentarios' type='buble' />
-		<InteractionOption label='entrada anterior' type='arrow' />
-		<InteractionOption label='siguiente entrada' type='arrow' flip/>
+		<InteractionOption onClick={prevPost} disabled={!prevPost} label='entrada anterior' type='arrow' flip/>
+		<InteractionOption onClick={nextPost} disabled={!nextPost} label='siguiente entrada' type='arrow' />
 		<InteractionOption label='lista de entradas' type='bullets' />
 	</Layout>
+
+Navigation.propTypes = {
+	nextPost: PropTypes.func,
+	prevPost: PropTypes.func,
+}
 
 export default Navigation

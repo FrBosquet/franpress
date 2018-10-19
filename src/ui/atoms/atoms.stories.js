@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean, number, select } from '@storybook/addon-knobs/react'
 
 import Icon from './icon'
+import Spinner from './spinner'
 import IconList from './icons'
 
 storiesOf('Atoms', module)
@@ -17,4 +18,6 @@ storiesOf('Atoms', module)
 			flip={boolean('flip', false)}
 		/>
 	})
-
+	.add('spinner', () => (
+		<Spinner />
+	))

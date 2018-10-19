@@ -1,47 +1,54 @@
 {
-	"name": "franpress",
-	"version": "1.0.0",
-	"description": "A simple cms for regular people",
-	"main": "index.js",
-	"scripts": {
-		"test": "jest --watch",
-		"start": "webpack-dev-server --open --mode development",
-		"build": "webpack",
-		"linter": "eslint . --ext .js",
-		"lintfix": "eslint . --ext .js --fix",
-		"server": "nodemon server/index.js",
-		"serverdev": "nodemon --inspect server/index.js"
-	},
-	"keywords": [
-		"blog",
-		"cms"
-	],
-	"author": "Fran Bosquet",
-	"license": "MIT",
-	"devDependencies": {
-		"babel-cli": "^6.26.0",
-		"babel-core": "^6.26.3",
-		"babel-loader": "^7.1.4",
-		"babel-preset-env": "^1.7.0",
-		"babel-preset-react": "^6.24.1",
-		"css-loader": "^0.28.11",
-		"eslint": "^5.2.0",
-		"eslint-plugin-react": "^7.10.0",
-		"style-loader": "^0.21.0",
-		"webpack": "^4.11.1",
-		"webpack-cli": "^3.0.2",
-		"webpack-dev-server": "^3.1.4"
-	},
-	"dependencies": {
-		"apollo-boost": "^0.1.16",
-		"babel-preset-stage-0": "^6.24.1",
-		"eslint-plugin-jest": "^21.24.1",
-		"graphql": "^14.0.2",
-		"jest": "^23.6.0",
-		"react": "^16.4.0",
-		"react-apollo": "^2.2.4",
-		"react-dom": "^16.4.0",
-		"recompose": "^0.30.0",
-		"styled-components": "^3.3.3"
-	}
+  "name": "franpress",
+  "version": "1.0.0",
+  "description": "A simple cms for regular people",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch",
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack",
+    "linter": "eslint . --ext .js",
+    "lintfix": "eslint . --ext .js --fix",
+    "server": "nodemon server/index.js",
+    "serverdev": "nodemon --inspect server/index.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "keywords": [
+    "blog",
+    "cms"
+  ],
+  "author": "Fran Bosquet",
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/addon-actions": "^4.0.0-rc.1",
+    "@storybook/addon-knobs": "^3.4.11",
+    "@storybook/addon-links": "^4.0.0-rc.1",
+    "@storybook/addons": "^4.0.0-rc.1",
+    "@storybook/react": "^4.0.0-rc.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "eslint": "^5.2.0",
+    "eslint-plugin-react": "^7.10.0",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.11.1",
+    "webpack-cli": "^3.0.2",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "apollo-boost": "^0.1.16",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint-plugin-jest": "^21.24.1",
+    "graphql": "^14.0.2",
+    "jest": "^23.6.0",
+    "react": "^16.4.0",
+    "react-apollo": "^2.2.4",
+    "react-dom": "^16.4.0",
+    "recompose": "^0.30.0",
+    "styled-components": "^3.3.3"
+  }
 }

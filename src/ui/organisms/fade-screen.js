@@ -2,20 +2,30 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import { Spinner } from '../atoms'
 
-const Content = ({ title, subtitle, date, photoAuthor, tags, content }) => (
-	<div>
+const FadeScreenLayout = styled.div`
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: url('assets/images/noise.png');
+	opacity: ${ props => props.faded ? 0 : 1};
+	transition: opacity .5s ease-in;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`
 
-	</div>
+const FadeScreen = ({ faded }) => (
+	<FadeScreenLayout faded={faded}>
+		<Spinner />
+	</FadeScreenLayout>
 )
 
-Content.propTypes = {
-	title: PropTypes.string,
-	subtitle: PropTypes.string,
-	date: PropTypes.string,
-	photoAuthor: PropTypes.string,
-	tags: PropTypes.arrayOf(PropTypes.string),
-	content: PropTypes.object
+FadeScreen.propTypes = {
+	faded: PropTypes.bool
 }
 
-export default Content
+export default FadeScreen

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Content, Header, Navigation, Interaction } from '../organisms'
+import { Content, Header, Navigation, Interaction, FadeScreen } from '../organisms'
 import { Copy } from '../organisms/copy'
 import { Shadows } from '../organisms/shadows'
 
@@ -15,29 +15,33 @@ const Blog = ({
 	navigation,
 	darkHeader,
 	nextPost,
-	prevPost
-}) => (
-	<div>
-		<Header dark={darkHeader} />
-		<Shadows />
-		<Content 
-			title={title}
-			subtitle={subtitle}
-			date={date}
-			photoAuthor={photoAuthor}
-			tags={tags}
-			content={content}
-		/>
-		<Navigation
-			items={navigation}
-		/>
-		<Interaction 
-			nextPost={nextPost}
-			prevPost={prevPost}
-		/>
-		<Copy />
-	</div>
-)
+	prevPost,
+	fetching
+}) => {
+	return (
+		<div>
+			<Header dark={darkHeader} />
+			<Shadows />
+			<Content
+				title={title}
+				subtitle={subtitle}
+				date={date}
+				photoAuthor={photoAuthor}
+				tags={tags}
+				content={content}
+			/>
+			<Navigation
+				items={navigation}
+			/>
+			<Interaction
+				nextPost={nextPost}
+				prevPost={prevPost}
+			/>
+			<Copy />
+			<FadeScreen faded={fetching} />
+		</div>
+	)
+}
 
 Blog.propTypes = {
 	nextPost: PropTypes.func,
@@ -49,7 +53,8 @@ Blog.propTypes = {
 	subtitle: PropTypes.string,
 	date: PropTypes.string,
 	photoAuthor: PropTypes.string,
-	darkHeader: PropTypes.bool
+	darkHeader: PropTypes.bool,
+	fetching: PropTypes.bool
 }
 
 export default Blog

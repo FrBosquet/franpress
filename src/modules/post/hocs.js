@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'react-apollo'
 import { compose, setDisplayName, branch, renderComponent } from 'recompose'
 import gql from 'graphql-tag'
+import { FadeScreen } from '../../ui/organisms'
 
 export const withSelectedPostId = compose(
 	setDisplayName('WithSelectedPostId'),
@@ -16,7 +17,7 @@ export const withPostSelector = compose(
     mutation SetActivePost($id: ID!){
       setActivePost(id: $id) @client
     }
-  `,{
+  `, {
 		props: ({ mutate }) => ({ setActivePost: id => mutate({ variables: { id } }) })
 	})
 )
@@ -46,8 +47,8 @@ export const withPost = compose(
 	{
 		options: props => ({ variables: { id: props.selectedPost } }),
 		props: ({ data }) => {
-			return { ...data.post }
+			return { ...data.post, fetching: data.loading }
 		}
 	}),
-	branch(({ title }) => !title, renderComponent(() => <div>Loading...</div>))
+	branch(({ title }) => !title, renderComponent(() => <FadeScreen faded={true} />))
 )

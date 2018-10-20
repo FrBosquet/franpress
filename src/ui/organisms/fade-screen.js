@@ -10,12 +10,13 @@ const FadeScreenLayout = styled.div`
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background: url('assets/images/noise.png');
-	opacity: ${ props => props.faded ? 0 : 1};
+	background: url('/assets/images/noise.png');
+	opacity: ${ props => props.faded ? 1 : 0};
 	transition: opacity .5s ease-in;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	pointer-events: none;
 `
 
 const FadeScreen = ({ faded }) => (
@@ -26,6 +27,10 @@ const FadeScreen = ({ faded }) => (
 
 FadeScreen.propTypes = {
 	faded: PropTypes.bool
+}
+
+FadeScreen.defaultProps = {
+	faded: false
 }
 
 export default FadeScreen

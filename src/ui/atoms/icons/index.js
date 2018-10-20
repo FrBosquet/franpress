@@ -7,6 +7,7 @@ import facebook from './facebook'
 import buble from './buble'
 import bullets from './bullets'
 import arrow from './arrow'
+import spinner from './spinner'
 
 export default {
 	logo,
@@ -17,5 +18,6 @@ export default {
 	facebook,
 	buble,
 	bullets,
-	arrow
+	arrow,
+	spinner
 }

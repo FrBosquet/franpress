@@ -8,26 +8,80 @@
     "icon": "buble",
 		"photoAuthor": "Rick Tervent/Unsplash",
     "tags": [ "Blog", "React", "Recompose" ],
-    "content": []    
+    "content": [{
+      "type": "list",
+      "items": [
+        "Lorem",
+        "Ipsum",
+        "Dolor",
+        "Sit amet"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet velit consectetur, ultricies nisi in, tempus neque. Praesent neque ex, maximus euismod dictum non, dapibus a purus. Quisque rhoncus lectus at enim aliquet feugiat eu tristique lorem. Curabitur ut finibus eros, sit amet mollis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, felis eu finibus lacinia, eros magna aliquam diam, quis tincidunt felis dolor vel ligula. Mauris tincidunt mollis arcu id auctor. Sed faucibus ut est id ultricies. Maecenas suscipit nisl in leo ultricies, sed sollicitudin libero feugiat. Aliquam pretium mi in nibh congue rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam scelerisque tincidunt nisl at vestibulum."
+    },
+    {
+      "type": "subtitle",
+      "content": "Subsection 1"
+    },
+    {
+      "type": "paragraph",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet velit consectetur, ultricies nisi in, tempus neque. Praesent neque ex, maximus euismod dictum non, dapibus a purus. Quisque rhoncus lectus at enim aliquet feugiat eu tristique lorem. Curabitur ut finibus eros, sit amet mollis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, felis eu finibus lacinia, eros magna aliquam diam, quis tincidunt felis dolor vel ligula. Mauris tincidunt mollis arcu id auctor. Sed faucibus ut est id ultricies. Maecenas suscipit nisl in leo ultricies, sed sollicitudin libero feugiat. Aliquam pretium mi in nibh congue rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam scelerisque tincidunt nisl at vestibulum."
+    },
+    {
+      "type": "title",
+      "content": "More content"
+    },
+    {
+      "type": "paragraph",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet velit consectetur, ultricies nisi in, tempus neque. Praesent neque ex, maximus euismod dictum non, dapibus a purus. Quisque rhoncus lectus at enim aliquet feugiat eu tristique lorem. Curabitur ut finibus eros, sit amet mollis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, felis eu finibus lacinia, eros magna aliquam diam, quis tincidunt felis dolor vel ligula. Mauris tincidunt mollis arcu id auctor. Sed faucibus ut est id ultricies. Maecenas suscipit nisl in leo ultricies, sed sollicitudin libero feugiat. Aliquam pretium mi in nibh congue rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam scelerisque tincidunt nisl at vestibulum."
+    }]    
   },
   {
     "id": "pidxs1e3",
     "title": "Post 3",
 		"subtitle": "Sin subtitulo",
 		"date": "1519081200000",
-		"photoAuthor": "Rick Tervent/Unsplash",
+		"photoAuthor": "Nhu Nguyen/Unsplash",
     "tags": [ "Blog", "Recompose" ],
-    "photoUrl": "rick-tervent.jpg",
+    "photoUrl": "nhu.jpg",
     "icon": "arrow",
     "content": [{
       "type": "paragraph",
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet velit consectetur, ultricies nisi in, tempus neque. Praesent neque ex, maximus euismod dictum non, dapibus a purus. B^Quisque rhoncus lectus at enim aliquet·. feugiat eu tristique lorem. Curabitur ut finibus eros, sit amet mollis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, felis eu finibus lacinia, eros magna aliquam diam, quis tincidunt felis dolor vel ligula. Mauris tincidunt mollis arcu id auctor. Sed faucibus ut est id ultricies. Maecenas suscipit nisl in leo ultricies, sed I^sollicitudin libero feugiat·. Aliquam pretium mi in nibh congue rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. B^Vestibulum ante ipsum primis in faucibus orci luctus et ultrices··. posuere cubilia Curae; Etiam scelerisque tincidunt nisl at vestibulum."
-    }]
+    },
+    {
+      "type": "image",
+      "content": "Fancy image",
+      "assets": ["https://i.ytimg.com/vi/YjqDhCGaR4g/maxresdefault.jpg"]
+    },
+    {
+      "type": "title",
+      "content": "Section 2"
+    },
+    {
+      "type": "paragraph",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet velit consectetur, ultricies nisi in, tempus neque. Praesent neque ex, maximus euismod dictum non, dapibus a purus. Quisque rhoncus lectus at enim aliquet feugiat eu tristique lorem. Curabitur ut finibus eros, sit amet mollis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, felis eu finibus lacinia, eros magna aliquam diam, quis tincidunt felis dolor vel ligula. Mauris tincidunt mollis arcu id auctor. Sed faucibus ut est id ultricies. Maecenas suscipit nisl in leo ultricies, sed sollicitudin libero feugiat. Aliquam pretium mi in nibh congue rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam scelerisque tincidunt nisl at vestibulum."
+    },
+    {
+      "type": "paragraph",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet velit consectetur, ultricies nisi in, tempus neque. Praesent neque ex, maximus euismod dictum non, dapibus a purus. Quisque rhoncus lectus at enim aliquet feugiat eu tristique lorem. Curabitur ut finibus eros, sit amet mollis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, felis eu finibus lacinia, eros magna aliquam diam, quis tincidunt felis dolor vel ligula. Mauris tincidunt mollis arcu id auctor. Sed faucibus ut est id ultricies. Maecenas suscipit nisl in leo ultricies, sed sollicitudin libero feugiat. Aliquam pretium mi in nibh congue rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam scelerisque tincidunt nisl at vestibulum."
+    },
+    {
+      "type": "subtitle",
+      "content": "Subsection 2"
+    },
+    {
+      "type": "paragraph",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet velit consectetur, ultricies nisi in, tempus neque. Praesent neque ex, maximus euismod dictum non, dapibus a purus. Quisque rhoncus lectus at enim aliquet feugiat eu tristique lorem. Curabitur ut finibus eros, sit amet mollis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, felis eu finibus lacinia, eros magna aliquam diam, quis tincidunt felis dolor vel ligula. Mauris tincidunt mollis arcu id auctor. Sed faucibus ut est id ultricies. Maecenas suscipit nisl in leo ultricies, sed sollicitudin libero feugiat. Aliquam pretium mi in nibh congue rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam scelerisque tincidunt nisl at vestibulum."
+    }
+  ]
   },
   {
     "id": "pidxs1e1",
-    "title": "Programando un blog desde cero",
-		"subtitle": "Post subtitle",
+    "title": "This is the first post",
+		"subtitle": "With a nice an catchy subtitle",
 		"date": "1534543200000",
     "photoAuthor": "Aaron Burden/Unsplash",
     "photoUrl": "head.jpg",
@@ -73,7 +127,7 @@
       },
       {
         "type": "title",
-        "content": "Vanequika"
+        "content": "More content"
       },
       {
         "type": "paragraph",

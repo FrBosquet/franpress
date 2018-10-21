@@ -12,7 +12,7 @@ const FadeScreenLayout = styled.div`
 	height: 100vh;
 	background: url('/assets/images/noise.png');
 	opacity: ${ props => props.faded ? 1 : 0};
-	transition: opacity .5s ease-in;
+	transition: opacity .25s ease-in;
 	display: flex;
 	justify-content: center;
 	align-items: center;

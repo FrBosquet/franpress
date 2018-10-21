@@ -12,7 +12,7 @@ import {
 const ContentHeadingLayout = styled.div`
 	display: flex;
 	height: 560px;
-	background: url('./assets/images/head.jpg');
+	background: url('./assets/images/${ props => props.photoUrl }');
 	background-size: cover;
 	background-position-y: center;
 	box-sizing: border-box;
@@ -21,10 +21,10 @@ const ContentHeadingLayout = styled.div`
 	padding-top: 70px;
 `
 
-const ContentHeading = ({ title, subtitle }) => (
-	<ContentHeadingLayout>
+const ContentHeading = ({ title, subtitle, photoUrl, icon }) => (
+	<ContentHeadingLayout photoUrl={ photoUrl } >
 		<ContentHeadingWrapper>
-			<Icon type='blog' />
+			<Icon type={ icon } />
 			<ContentHeadingTitle>{title}</ContentHeadingTitle>
 			<ContentHeadingSubtitle>{subtitle}</ContentHeadingSubtitle>
 		</ContentHeadingWrapper>
@@ -33,7 +33,9 @@ const ContentHeading = ({ title, subtitle }) => (
 
 ContentHeading.propTypes = {
 	title: PropTypes.string,
-	subtitle: PropTypes.string
+	subtitle: PropTypes.string,
+	photoUrl: PropTypes.string,
+	icon: PropTypes.string
 }
 
 export default ContentHeading

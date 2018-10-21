@@ -16,29 +16,33 @@ const Blog = ({
 	darkHeader,
 	nextPost,
 	prevPost,
-	fetching
+	fetching,
+	icon,
+	photoUrl
 }) => {
 	return (
 		<div>
-			<Header dark={darkHeader} />
+			<Header dark={ darkHeader } />
 			<Shadows />
 			<Content
-				title={title}
-				subtitle={subtitle}
-				date={date}
-				photoAuthor={photoAuthor}
-				tags={tags}
-				content={content}
+				title={ title }
+				subtitle={ subtitle }
+				date={ date }
+				icon={ icon }
+				photoUrl={ photoUrl }
+				photoAuthor={ photoAuthor }
+				tags={ tags }
+				content={ content }
 			/>
 			<Navigation
-				items={navigation}
+				items={ navigation }
 			/>
 			<Interaction
-				nextPost={nextPost}
-				prevPost={prevPost}
+				nextPost={ nextPost }
+				prevPost={ prevPost }
 			/>
 			<Copy />
-			<FadeScreen faded={fetching} />
+			<FadeScreen faded={ fetching } />
 		</div>
 	)
 }
@@ -53,6 +57,8 @@ Blog.propTypes = {
 	subtitle: PropTypes.string,
 	date: PropTypes.string,
 	photoAuthor: PropTypes.string,
+	photoUrl: PropTypes.string,
+	icon: PropTypes.string,
 	darkHeader: PropTypes.bool,
 	fetching: PropTypes.bool
 }

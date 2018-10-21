@@ -20,6 +20,8 @@ const typeDefs = gql`
     content: [Content]
     nextPost: String
     prevPost: String
+    icon: String
+    photoUrl: String
   }
 
   type Query {

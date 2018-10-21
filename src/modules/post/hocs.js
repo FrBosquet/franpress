@@ -33,6 +33,8 @@ export const withPost = compose(
         date
         photoAuthor
         tags
+        photoUrl
+        icon
         nextPost
         prevPost
         content{

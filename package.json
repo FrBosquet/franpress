@@ -11,7 +11,7 @@
     "lintfix": "eslint . --ext .js --fix",
     "server": "nodemon server/index.js",
     "serverdev": "nodemon --inspect server/index.js",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook"
   },
   "keywords": [

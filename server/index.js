@@ -30,12 +30,20 @@ const typeDefs = gql`
   }
 `
 
+const sortedPosts = posts
+	.sort((a,b) => a.date < b.date ? 1 : -1)
+	.map((post, idx, array) => ({
+		...post,
+		nextPost: idx !== 0 ? array[idx -1].id : null,
+		prevPost: idx < array.length - 1 ? array[idx+1].id : null
+	}))
+
 const resolvers = {
 	Query: {
-		posts: () => posts,
+		posts: () => sortedPosts,
 		post: (root, args) => {
-			if(args.id) return posts.find(post => post.id === args.id)
-			if(args.url) return posts.find(post => {
+			if(args.id) return sortedPosts.find(post => post.id === args.id)
+			if(args.url) return sortedPosts.find(post => {
 				return post.title.toLowerCase().replace(' ', '-') === args.url
 			})
 		}

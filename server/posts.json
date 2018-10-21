@@ -1,11 +1,9 @@
 [ 
   {
-    "id": "2",
+    "id": "pidxs1e2",
     "title": "Post 2",
 		"subtitle": "Post subtitle",
     "date": "1525557600000",
-    "nextPost": "1",
-    "prevPost": "3",
     "photoUrl": "rick-tervent.jpg",
     "icon": "buble",
 		"photoAuthor": "Rick Tervent/Unsplash",
@@ -13,13 +11,12 @@
     "content": []    
   },
   {
-    "id": "3",
+    "id": "pidxs1e3",
     "title": "Post 3",
 		"subtitle": "Sin subtitulo",
 		"date": "1519081200000",
 		"photoAuthor": "Rick Tervent/Unsplash",
     "tags": [ "Blog", "Recompose" ],
-    "nextPost": "2",
     "photoUrl": "rick-tervent.jpg",
     "icon": "arrow",
     "content": [{
@@ -28,14 +25,13 @@
     }]
   },
   {
-    "id": "1",
+    "id": "pidxs1e1",
     "title": "Programando un blog desde cero",
 		"subtitle": "Post subtitle",
 		"date": "1534543200000",
     "photoAuthor": "Aaron Burden/Unsplash",
     "photoUrl": "head.jpg",
     "icon": "arrow",
-    "prevPost": "2",
     "tags": [ "Blog", "BitBucket", "CI" ],
     "content": [
       {

@@ -1,5 +1,5 @@
 export const defaults = {
-	selectedPost: '1'
+	selectedPost: 'pidxs1e1'
 }
 
 export const resolvers = {

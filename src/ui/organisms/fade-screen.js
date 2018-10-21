@@ -20,7 +20,7 @@ const FadeScreenLayout = styled.div`
 `
 
 const FadeScreen = ({ faded }) => (
-	<FadeScreenLayout faded={faded}>
+	<FadeScreenLayout faded={ faded }>
 		<Spinner />
 	</FadeScreenLayout>
 )

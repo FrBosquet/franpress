@@ -19,7 +19,7 @@ SVG.defaultProps = {
 const Icon = ({ width, margin, color, type, flip }) => {
 	const DesiredIcon = Icons[type] || Icons['logo']
 	return (
-		<SVG color={color} margin={margin} flip={flip} viewBox="0 0 100 100" width={ width } height={ width }>
+		<SVG color={ color } margin={ margin } flip={ flip } viewBox="0 0 100 100" width={ width } height={ width }>
 			<DesiredIcon color={ color }/>
 		</SVG>
 	)

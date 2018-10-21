@@ -25,11 +25,11 @@ const Navigation = ({ items }) =>
 	<Layout>
 		{ items.map(({ type, content, selected, onClick }, idx) => 
 			<NavigationEntry 
-				key={idx}
-				subtitle={ type === 'subtitle'}
-				onClick={onClick}
-				title={content}
-				selected={selected}
+				key={ idx }
+				subtitle={ type === 'subtitle' }
+				onClick={ onClick }
+				title={ content }
+				selected={ selected }
 			/>)}
 	</Layout>
 

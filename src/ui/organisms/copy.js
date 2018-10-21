@@ -22,5 +22,5 @@ export const CopyLayout = styled.div`
 export const Copy = () =>
 	<CopyLayout>
 		<InlineText>Copyright Fran Bosquet 2018</InlineText>
-		<Icon width={20} margin={10}/>
+		<Icon width={ 20 } margin={ 10 }/>
 	</CopyLayout>

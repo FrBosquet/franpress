@@ -22,7 +22,7 @@ const ContentBodyImageLayout = styled.figure`
   `
 
 const ContentBodyImage = ({ url, caption }) => <ContentBodyImageLayout>
-	<img src={url} alt={caption}/>
+	<img src={ url } alt={ caption }/>
 	<figcaption>{caption}</figcaption>
 </ContentBodyImageLayout>
 

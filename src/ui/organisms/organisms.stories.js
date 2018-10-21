@@ -8,6 +8,6 @@ storiesOf('Organisms', module)
 	.addDecorator(withKnobs)
 	.add('fade screen', () => {
 		return <FadeScreen
-			faded={boolean('Faded', false)}
+			faded={ boolean('Faded', false) }
 		/>
 	})

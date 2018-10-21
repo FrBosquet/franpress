@@ -20,7 +20,7 @@ const ContentMetadata = ({ tags, date, photoAuthor }) => (
 		<ContentMetadataLabel>{ date }</ContentMetadataLabel>
 		<ContentMetadataLabel align='center'>Foto por {photoAuthor}</ContentMetadataLabel>
 		<ContentMetadataLabel align='flex-end'>
-			{ tags.map(tag => <ContentMetadataTag key={tag}>{tag}</ContentMetadataTag> ) }
+			{ tags.map(tag => <ContentMetadataTag key={ tag }>{tag}</ContentMetadataTag> ) }
 		</ContentMetadataLabel>
 	</ContentMetadataLayout>
 )

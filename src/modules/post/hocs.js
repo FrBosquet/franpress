@@ -52,5 +52,5 @@ export const withPost = compose(
 			return { ...data.post, fetching: data.loading }
 		}
 	}),
-	branch(({ title }) => !title, renderComponent(() => <FadeScreen faded={true} />))
+	branch(({ title }) => !title, renderComponent(() => <FadeScreen faded={ true } />))
 )

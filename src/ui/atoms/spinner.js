@@ -10,7 +10,7 @@ const SpinnerSvg = styled.svg`
 const Spinner = ({ width }) => {
 	const Logo = Icons['spinner']
 	return (
-		<SpinnerSvg viewBox="0 0 100 100" width={width} height={width}>
+		<SpinnerSvg viewBox="0 0 100 100" width={ width } height={ width }>
 			<Logo />
 		</SpinnerSvg>
 	)

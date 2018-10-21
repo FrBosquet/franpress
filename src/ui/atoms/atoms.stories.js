@@ -11,11 +11,11 @@ storiesOf('Atoms', module)
 	.add('icon', () => {
 		const list = Object.keys(IconList)
 		return <Icon 
-			type={select('type',list,'logo')}
-			color={text('color','#4499FF')}
-			width={number('width', 100)}
-			margin={number('margin', 25)}
-			flip={boolean('flip', false)}
+			type={ select('type',list,'logo') }
+			color={ text('color','#4499FF') }
+			width={ number('width', 100) }
+			margin={ number('margin', 25) }
+			flip={ boolean('flip', false) }
 		/>
 	})
 	.add('spinner', () => (

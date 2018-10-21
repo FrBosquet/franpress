@@ -12,9 +12,9 @@ const Anchor = styled.a`
 `
 
 const InteractionOption = ({ type, label, flip, onClick, disabled }) => 
-	<Anchor onClick={onClick} target='_blank' disabled={disabled}>
-		<Icon color={disabled ? '#d5c4c7' : '#4B0013'} type={ type } width={32} margin={5} flip={flip} disabled={disabled}/>
-		<InteractionOptionLabel disabled={disabled} gap={10}>{label}</InteractionOptionLabel>
+	<Anchor onClick={ onClick } target='_blank' disabled={ disabled }>
+		<Icon color={ disabled ? '#d5c4c7' : '#4B0013' } type={ type } width={ 32 } margin={ 5 } flip={ flip } disabled={ disabled }/>
+		<InteractionOptionLabel disabled={ disabled } gap={ 10 }>{label}</InteractionOptionLabel>
 	</Anchor>
 
 InteractionOption.propTypes = {

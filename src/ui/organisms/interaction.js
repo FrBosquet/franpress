@@ -26,8 +26,8 @@ const Navigation = ({ nextPost, prevPost }) =>
 		<InteractionOption label='compartir' type='twitter' />
 		<InteractionOption label='compartir' type='facebook' />
 		<InteractionOption label='comentarios' type='buble' />
-		<InteractionOption onClick={prevPost} disabled={!prevPost} label='entrada anterior' type='arrow' flip/>
-		<InteractionOption onClick={nextPost} disabled={!nextPost} label='siguiente entrada' type='arrow' />
+		<InteractionOption onClick={ prevPost } disabled={ !prevPost } label='entrada anterior' type='arrow' flip/>
+		<InteractionOption onClick={ nextPost } disabled={ !nextPost } label='siguiente entrada' type='arrow' />
 		<InteractionOption label='lista de entradas' type='bullets' />
 	</Layout>
 

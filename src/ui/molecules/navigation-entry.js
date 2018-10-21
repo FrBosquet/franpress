@@ -5,7 +5,7 @@ import { NavigationEntrySection, NavigationEntrySubsection } from '../atoms'
 
 const Molecule = ({ title, subtitle, selected, onClick }) => {
 	const Component = subtitle ? NavigationEntrySubsection : NavigationEntrySection
-	return <Component onClick={onClick} selected={ selected }>{ title }</Component>
+	return <Component onClick={ onClick } selected={ selected }>{ title }</Component>
 }
 
 Molecule.propTypes = {

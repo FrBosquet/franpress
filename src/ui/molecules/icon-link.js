@@ -9,8 +9,8 @@ const Anchor = styled.a`
 `
 
 const IconLink = ({ type, url, width, margin, gap, color }) => 
-	<Anchor href={url} target='_blank' gap={gap}>
-		<Icon type={ type } width={width} margin={margin} color={color} />
+	<Anchor href={ url } target='_blank' gap={ gap }>
+		<Icon type={ type } width={ width } margin={ margin } color={ color } />
 	</Anchor>
 
 IconLink.propTypes = {

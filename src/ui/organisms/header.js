@@ -18,8 +18,8 @@ const HeaderLayout = styled.div`
 `
 const Header = ({ dark }) => (
 	<HeaderLayout>
-		<HeaderLogo dark={dark} />
-		<HeaderNav dark={dark} />
+		<HeaderLogo dark={ dark } />
+		<HeaderNav dark={ dark } />
 	</HeaderLayout>
 )
 

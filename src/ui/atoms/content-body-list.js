@@ -12,7 +12,7 @@ const ContentBodyListLayout = styled.ul`
   }
   `
 const ContentBodyList = ({ content }) => <ContentBodyListLayout>
-	{ content.map((label, idx) => <li key={idx}>{label}</li>)}
+	{ content.map((label, idx) => <li key={ idx }>{label}</li>)}
 </ContentBodyListLayout>
 
 ContentBodyList.propTypes = {

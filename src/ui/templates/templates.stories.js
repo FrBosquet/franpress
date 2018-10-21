@@ -8,9 +8,9 @@ storiesOf('Templates', module)
 	.addDecorator(withKnobs)
 	.add('fade screen', () => {
 		return <Blog
-			content={[]}
-			tags={[]}
-			navigation={[]}
-			fetching={boolean('fetching', false)}
+			content={ [] }
+			tags={ [] }
+			navigation={ [] }
+			fetching={ boolean('fetching', false) }
 		/>
 	})

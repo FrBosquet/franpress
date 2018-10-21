@@ -6,6 +6,7 @@ import {
 	ContentMetadataLabel,
 	ContentMetadataTag
 } from '../atoms'
+import { getFormatedDate } from '../../utils/dates'
 
 const ContentMetadataLayout = styled.div`
   display: grid;
@@ -17,7 +18,7 @@ const ContentMetadataLayout = styled.div`
 
 const ContentMetadata = ({ tags, date, photoAuthor }) => (
 	<ContentMetadataLayout>
-		<ContentMetadataLabel>{ date }</ContentMetadataLabel>
+		<ContentMetadataLabel>{ getFormatedDate(date) }</ContentMetadataLabel>
 		<ContentMetadataLabel align='center'>Foto por {photoAuthor}</ContentMetadataLabel>
 		<ContentMetadataLabel align='flex-end'>
 			{ tags.map(tag => <ContentMetadataTag key={ tag }>{tag}</ContentMetadataTag> ) }

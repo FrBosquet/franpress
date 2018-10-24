@@ -1,13 +1,30 @@
 const { ApolloServer, gql } = require('apollo-server')
 
-const posts = require('./posts.json')
+const { savePost, getSortedPosts } = require('./db/index')
 
 const typeDefs = gql`
+  input ContentInput{
+    type: String
+    content: String
+    items: [String]
+    assets: [String]
+  }
+
   type Content {
     type: String
     content: String
     items: [String]
     assets: [String]
+  }
+
+  input PostInput {
+    title: String!
+    subtitle: String!
+    photoAuthor: String!
+    tags: [String]!
+    content: [ContentInput]
+    icon: String
+    photoUrl: String!
   }
 
   type Post {
@@ -28,24 +45,27 @@ const typeDefs = gql`
     posts: [Post]
     post(id: ID, url: String): Post
   }
-`
 
-const sortedPosts = posts
-	.sort((a,b) => a.date < b.date ? 1 : -1)
-	.map((post, idx, array) => ({
-		...post,
-		nextPost: idx !== 0 ? array[idx -1].id : null,
-		prevPost: idx < array.length - 1 ? array[idx+1].id : null
-	}))
+  type Mutation {
+    addPost(post: PostInput): Post
+  }
+`
 
 const resolvers = {
 	Query: {
-		posts: () => sortedPosts,
-		post: (root, args) => {
+		posts: async () => await getSortedPosts(),
+		post: async (root, args) => {
+			const sortedPosts = await getSortedPosts()
 			if(args.id) return sortedPosts.find(post => post.id === args.id)
 			if(args.url) return sortedPosts.find(post => {
-				return post.title.toLowerCase().replace(' ', '-') === args.url
+				return post.title.toLowerCase().replace(/\s/g, '-') === args.url
 			})
+		}
+	},
+	Mutation: {
+		addPost: async (root, args) => {
+			const post = await savePost(args.post)
+			return post
 		}
 	}
 }

@@ -5,5 +5,5 @@ const getMonthName = date => months[date.getMonth()]
 
 export const getFormatedDate = str => {
 	const date = fromTimestampString(str)
-	return `${date.getDate()} de ${getMonthName(date)} de ${date.getYear()}`
+	return `${date.getDate()} de ${getMonthName(date)} de ${date.getFullYear()}`
 }

@@ -1,9 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Content, Header, Navigation, Interaction, FadeScreen } from '../organisms'
-import { Copy } from '../organisms/copy'
-import { Shadows } from '../organisms/shadows'
+import { Content, Header, Navigation, Interaction, FadeScreen, PostList, Shadows, Copy } from '../organisms'
 
 const Blog = ({
 	title,
@@ -41,6 +39,7 @@ const Blog = ({
 				nextPost={ nextPost }
 				prevPost={ prevPost }
 			/>
+			<PostList open={ true }/>
 			<Copy />
 			<FadeScreen faded={ fetching } />
 		</div>

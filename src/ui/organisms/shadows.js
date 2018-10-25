@@ -17,8 +17,10 @@ const Shadow = styled.div`
   box-shadow: 0 -5px 5px rgba(0,0,0,0.15);
 `
 
-export const Shadows = () =>
+const Shadows = () =>
 	<ShadowsLayout>
 		<Shadow />
 		<Shadow />
 	</ShadowsLayout>
+
+export default Shadows

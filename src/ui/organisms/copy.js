@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Icon } from '../atoms'
 import { InlineText } from '../atoms/label'
 
-export const CopyLayout = styled.div`
+const CopyLayout = styled.div`
   position: fixed;
   bottom: 0px;
   left: 0px;
@@ -19,8 +19,10 @@ export const CopyLayout = styled.div`
   }
 `
 
-export const Copy = () =>
+const Copy = () =>
 	<CopyLayout>
 		<InlineText>Copyright Fran Bosquet 2018</InlineText>
 		<Icon width={ 20 } margin={ 10 }/>
 	</CopyLayout>
+
+export default Copy
